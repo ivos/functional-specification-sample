@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Sample functional specification demonstrating CaseFu analytical tool",
   "scripts": {
-    "build": "casefu build"
+    "build": "casefu build",
+    "serve": "casefu serve"
   },
   "repository": {
     "type": "git",

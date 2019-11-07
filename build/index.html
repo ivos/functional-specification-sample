@@ -74,7 +74,127 @@
 <div class="container-fluid">
     <main role="main">
 
-        <section id="__search">
+        <!--fsd/Overview.md-->
+<section id="__home">
+<h1>Ordering FSD</h1>
+<p>This is the FSD (Functional Specification Document) for the Ordering system.</p>
+<h2>Data model</h2>
+<ul>
+<li><a href="#Customer" title="Customer">Customer</a></li>
+<li><a href="#Order" title="Order">Order</a></li>
+</ul>
+</section>
+<!--fsd/customer/Customer.md-->
+<section id="Customer">
+<h2><i class="fas fa-database text-muted"></i> Customer <code>Customer</code></h2>
+<h3>Attributes:</h3>
+<table class="table table-bordered table-hover">
+<thead>
+<tr>
+<th>Name</th>
+<th>Status</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id<code class="float-right">id</code></td>
+<td title="Auto-generated primary key"><span class="badge badge-danger">APK</span></td>
+<td>
+<p>bigint</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Version<code class="float-right">version</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>int</p>
+</td>
+<td>
+<p>Optimistic locking version</p>
+</td>
+</tr>
+<tr>
+<td>Name<code class="float-right">name</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>string 100</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Tax number<code class="float-right">taxNumber</code></td>
+<td title="Optional unique"><span class="badge badge-warning">OU</span></td>
+<td>
+<p>string 14</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Maturity interval<code class="float-right">maturityInterval</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>int</p>
+</td>
+<td>
+<p>Invoice maturity interval [days]</p>
+</td>
+</tr>
+<tr>
+<td>Mobile<code class="float-right">mobile</code></td>
+<td title="Conditional"><span class="badge badge-info">C</span></td>
+<td>
+<p>string 30</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Email<code class="float-right">email</code></td>
+<td title="Conditional"><span class="badge badge-info">C</span></td>
+<td>
+<p>string 50</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Notes</h3>
+<ul>
+<li>Either <code>mobile</code> or <code>email</code> is required.</li>
+</ul>
+<div id="section-computed-Customer">
+</div>
+</section>
+<!--fsd/order/Order.md-->
+<section id="Order">
+<h2><i class="fas fa-database text-muted"></i> Order <code>Order</code></h2>
+<h3>Attributes:</h3>
+<table class="table table-bordered table-hover">
+<thead>
+<tr>
+<th>Name</th>
+<th>Status</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id<code class="float-right">id</code></td>
+<td title="Auto-generated primary key"><span class="badge badge-danger">APK</span></td>
+<td>
+<p>bigint</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="section-computed-Order">
+</div>
+</section>
+<section id="__search">
 <form>
 <div class="form-row mb-3">
 <div class="input-group mx-2">
@@ -94,6 +214,12 @@ placeholder="Start typing to search..." />
 </ul>
 <h2>Entities</h2>
 <ul>
+<li class="__search-item" id="__search-item-Customer">
+<a href="#Customer" class="mr-3">Customer</a> <code>Customer</code>
+</li>
+<li class="__search-item" id="__search-item-Order">
+<a href="#Order" class="mr-3">Order</a> <code>Order</code>
+</li>
 
 </ul>
 <h2>Use cases</h2>
