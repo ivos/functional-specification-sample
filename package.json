@@ -1,0 +1,28 @@
+{
+  "name": "functional-specification-sample",
+  "version": "1.0.0",
+  "description": "Sample functional specification demonstrating CaseFu analytical tool",
+  "scripts": {
+    "build": "casefu build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivos/functional-specification-sample.git"
+  },
+  "keywords": [
+    "analysis",
+    "functional specification",
+    "data model",
+    "screen mockup",
+    "use case"
+  ],
+  "author": "Ivo Maixner",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ivos/functional-specification-sample/issues"
+  },
+  "homepage": "https://github.com/ivos/functional-specification-sample#readme",
+  "devDependencies": {
+    "casefu-cli": "file:../casefu/casefu-cli/"
+  }
+}
