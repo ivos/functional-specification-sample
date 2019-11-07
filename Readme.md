@@ -10,5 +10,11 @@ It showcases the following features of the tool:
 
 ## Functional Specification Document
 
-The output Functional Specification Document can be downloaded at
+The output Functional Specification Document is available at
 [build/index.html](build/index.html).
+
+You can
+[view the Functional Specification Document here](http://htmlpreview.github.io/?https://github.com/ivos/functional-specification-sample/blob/master/build/index.html).
+
+You can also
+[download it here](https://raw.githubusercontent.com/ivos/functional-specification-sample/master/build/index.html).
