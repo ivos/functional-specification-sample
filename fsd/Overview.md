@@ -6,3 +6,7 @@ This is the FSD (Functional Specification Document) for an imaginary Ordering sy
 
 - `#Customer`
 - `#Order`
+
+## Menu
+
+- [Customers](#/customers)

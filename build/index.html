@@ -129,6 +129,10 @@
 <li><a href="#Customer" title="Customer">Customer</a></li>
 <li><a href="#Order" title="Order">Order</a></li>
 </ul>
+<h2>Menu</h2>
+<ul>
+<li><a href="#/customers" title="/customers">Customers</a></li>
+</ul>
 </section>
 <!--fsd/customer/Customer.md-->
 <section id="Customer">
@@ -231,6 +235,108 @@
 <strong>Referred from:</strong>
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
 </div>
+</div>
+</section>
+<!--fsd/customer/CustomerList.md-->
+<section id="/customers">
+<h2><i class="fas fa-desktop text-muted"></i> List customers <code>/customers</code></h2>
+<div class="card">
+<div class="card-body">
+<h3><i class="fas fa-list text-muted"></i> Search</h3>
+<div class="form-group row">
+ <label for="cf-aid-1" class="col-sm-4 col-lg-3 col-form-label">Search</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-1" type="text" class="form-control" placeholder="Search" value="">
+  <small class="form-text text-muted">Search name, tax number, mobile, email or web</small>
+ </div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<h3><i class="fas fa-table text-muted"></i> </h3>
+<table class="table table-bordered table-hover table-sm mb-0">
+<thead>
+<tr>
+<th>
+<p>Name</p>
+</th>
+<th>
+<p>Tax number</p>
+</th>
+<th>
+<p>Mobile</p>
+</th>
+<th>
+<p>Email</p>
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+<p>Cookieville Minimum Security Orphanarium</p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p>202-555-0124</p>
+</td>
+<td>
+<p><a href="mailto:cookievillemso@free-email.com">cookievillemso@free-email.com</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Democratic Order of Planets</p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p><a href="mailto:inquiries@doop.org">inquiries@doop.org</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MomCorp</p>
+</td>
+<td>
+<p>01-1230001</p>
+</td>
+<td>
+<p>202-555-0138</p>
+</td>
+<td>
+<p><a href="mailto:dev.null@mom.com">dev.null@mom.com</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Planet express</p>
+</td>
+<td>
+<p>01-9852145</p>
+</td>
+<td>
+<p>202-555-0182</p>
+</td>
+<td>
+<p><a href="mailto:info@planet-express.com">info@planet-express.com</a></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<h3>Notes</h3>
+<ul>
+<li>Sorted by <code>Customer.name</code>.</li>
+<li>First 100 rows displayed.</li>
+</ul>
+<div id="section-computed-/customers">
 </div>
 </section>
 <!--fsd/order/Order.md-->
@@ -426,6 +532,9 @@ placeholder="Start typing to search..." />
 </form>
 <h2><i class="fas fa-desktop text-muted"></i> Screens</h2>
 <ul>
+<li class="__search-item" id="__search-item-/customers">
+<a href="#/customers" class="mr-3">List customers</a> <code>/customers</code>
+</li>
 
 </ul>
 <h2><i class="fas fa-database text-muted"></i> Entities</h2>
