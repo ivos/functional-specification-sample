@@ -9,6 +9,8 @@
 - Maturity interval (M int) - Invoice maturity interval [days]
 - Mobile (C string 30)
 - Email (C string 50)
+- Web (O string 50)
+- Updated (M timestamp)
 
 ### Notes
 

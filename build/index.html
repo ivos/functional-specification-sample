@@ -74,10 +74,10 @@
 <div class="container-fluid">
     <main role="main">
 
-        <!--fsd/Overview.md-->
+<!--fsd/Overview.md-->
 <section id="__home">
 <h1>Ordering FSD</h1>
-<p>This is the FSD (Functional Specification Document) for the Ordering system.</p>
+<p>This is the FSD (Functional Specification Document) for an imaginary Ordering system.</p>
 <h2>Data model</h2>
 <ul>
 <li><a href="#Customer" title="Customer">Customer</a></li>
@@ -158,6 +158,22 @@
 </td>
 <td></td>
 </tr>
+<tr>
+<td>Web<code class="float-right">web</code></td>
+<td title="Optional"><span class="badge badge-success">O</span></td>
+<td>
+<p>string 50</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Updated<code class="float-right">updated</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>timestamp</p>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3>Notes</h3>
@@ -165,6 +181,10 @@
 <li>Either <code>mobile</code> or <code>email</code> is required.</li>
 </ul>
 <div id="section-computed-Customer">
+<div id="section-referred-from-Customer">
+<strong>Referred from:</strong>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
 </div>
 </section>
 <!--fsd/order/Order.md-->
@@ -182,16 +202,166 @@
 </thead>
 <tbody>
 <tr>
-<td>id<code class="float-right">id</code></td>
+<td>Id<code class="float-right">id</code></td>
 <td title="Auto-generated primary key"><span class="badge badge-danger">APK</span></td>
 <td>
 <p>bigint</p>
 </td>
 <td></td>
 </tr>
+<tr>
+<td>Version<code class="float-right">version</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>int</p>
+</td>
+<td>
+<p>Optimistic locking version</p>
+</td>
+</tr>
+<tr>
+<td>Order number<code class="float-right">orderNumber</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>string 30</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Customer<code class="float-right">customer</code></td>
+<td title="Foreign key"><span class="badge badge-dark">FK</span></td>
+<td>
+<p><a href="#Customer" title="Customer">Customer</a></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Due date<code class="float-right">dueDate</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>date</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Status<code class="float-right">status</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>enum: created, shipped, invoiced</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Comment<code class="float-right">comment</code></td>
+<td title="Optional"><span class="badge badge-success">O</span></td>
+<td>
+<p>string</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Created<code class="float-right">created</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>timestamp</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Updated<code class="float-right">updated</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>timestamp</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Order items<code class="float-right">orderItems</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>[<a href="#OrderItem" title="OrderItem">OrderItem</a>]</p>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <div id="section-computed-Order">
+<div id="section-refers-to-Order">
+<strong>Refers to:</strong>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
+</div>
+<div id="section-referred-from-Order">
+<strong>Referred from:</strong>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
+</div>
+</div>
+</section>
+<!--fsd/order/OrderItem.md-->
+<section id="OrderItem">
+<h2><i class="fas fa-database text-muted"></i> Order item <code>OrderItem</code></h2>
+<h3>Attributes:</h3>
+<table class="table table-bordered table-hover">
+<thead>
+<tr>
+<th>Name</th>
+<th>Status</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id<code class="float-right">id</code></td>
+<td title="Auto-generated primary key"><span class="badge badge-danger">APK</span></td>
+<td>
+<p>bigint</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Order<code class="float-right">order</code></td>
+<td title="Foreign key"><span class="badge badge-dark">FK</span></td>
+<td>
+<p><a href="#Order" title="Order">Order</a></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Product<code class="float-right">product</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>string 100</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Unit price<code class="float-right">unitPrice</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>decimal</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>Quantity<code class="float-right">quantity</code></td>
+<td title="Mandatory"><span class="badge badge-primary">M</span></td>
+<td>
+<p>decimal</p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="section-computed-OrderItem">
+<div id="section-refers-to-OrderItem">
+<strong>Refers to:</strong>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
+<div id="section-referred-from-OrderItem">
+<strong>Referred from:</strong>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
 </div>
 </section>
 <section id="__search">
@@ -219,6 +389,9 @@ placeholder="Start typing to search..." />
 </li>
 <li class="__search-item" id="__search-item-Order">
 <a href="#Order" class="mr-3">Order</a> <code>Order</code>
+</li>
+<li class="__search-item" id="__search-item-OrderItem">
+<a href="#OrderItem" class="mr-3">Order item</a> <code>OrderItem</code>
 </li>
 
 </ul>
