@@ -233,7 +233,68 @@
 <div id="section-computed-Customer">
 <div id="section-referred-from-Customer">
 <strong>Referred from:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
+</div>
+</section>
+<!--fsd/customer/CustomerDetail.md-->
+<section id="/customers/detail">
+<h2><i class="fas fa-desktop text-muted"></i> Customer detail <code>/customers/detail</code></h2>
+<div class="card">
+<div class="card-body">
+<h3><i class="fas fa-list text-muted"></i> </h3>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Name</label>
+ <div class="col-sm-7 col-lg-8">
+<p>Planet express</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Tax number</label>
+ <div class="col-sm-7 col-lg-8">
+<p>01-9852145</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Maturity interval</label>
+ <div class="col-sm-7 col-lg-8">
+<p>30</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Mobile</label>
+ <div class="col-sm-7 col-lg-8">
+<p>202-555-0182</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Email</label>
+ <div class="col-sm-7 col-lg-8">
+<p><a href="mailto:info@planet-express.com">info@planet-express.com</a></p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Web</label>
+ <div class="col-sm-7 col-lg-8">
+<p><a href="https://planet-express.com">https://planet-express.com</a></p>
+ </div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/customers" class="btn btn-outline-secondary" title="/customers">Back</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="section-computed-/customers/detail">
+<div id="section-refers-to-/customers/detail">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
+</div>
+<div id="section-referred-from-/customers/detail">
+<strong>Referred from:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
 </div>
 </div>
 </section>
@@ -274,7 +335,7 @@
 </thead>
 <tr>
 <td>
-<p>Cookieville Minimum Security Orphanarium</p>
+<p><a href="#/customers/detail" title="/customers/detail">Cookieville Minimum Security Orphanarium</a></p>
 </td>
 <td>
 <p></p>
@@ -288,7 +349,7 @@
 </tr>
 <tr>
 <td>
-<p>Democratic Order of Planets</p>
+<p><a href="#/customers/detail" title="/customers/detail">Democratic Order of Planets</a></p>
 </td>
 <td>
 <p></p>
@@ -302,7 +363,7 @@
 </tr>
 <tr>
 <td>
-<p>MomCorp</p>
+<p><a href="#/customers/detail" title="/customers/detail">MomCorp</a></p>
 </td>
 <td>
 <p>01-1230001</p>
@@ -316,7 +377,7 @@
 </tr>
 <tr>
 <td>
-<p>Planet express</p>
+<p><a href="#/customers/detail" title="/customers/detail">Planet express</a></p>
 </td>
 <td>
 <p>01-9852145</p>
@@ -333,10 +394,19 @@
 </div>
 <h3>Notes</h3>
 <ul>
-<li>Sorted by <code>Customer.name</code>.</li>
+<li>Sorted by <a href="#Customer" title="Customer.name">Customer.name</a>.</li>
 <li>First 100 rows displayed.</li>
 </ul>
 <div id="section-computed-/customers">
+<div id="section-refers-to-/customers">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<a href="#Customer" title="Customer.name">Customer.name</a>
+</div>
+<div id="section-referred-from-/customers">
+<strong>Referred from:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>
+</div>
 </div>
 </section>
 <!--fsd/order/Order.md-->
@@ -532,6 +602,9 @@ placeholder="Start typing to search..." />
 </form>
 <h2><i class="fas fa-desktop text-muted"></i> Screens</h2>
 <ul>
+<li class="__search-item" id="__search-item-/customers/detail">
+<a href="#/customers/detail" class="mr-3">Customer detail</a> <code>/customers/detail</code>
+</li>
 <li class="__search-item" id="__search-item-/customers">
 <a href="#/customers" class="mr-3">List customers</a> <code>/customers</code>
 </li>

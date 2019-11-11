@@ -7,11 +7,12 @@
 ### Table:
 
 - Name
-    - Cookieville Minimum Security Orphanarium
-    - Democratic Order of Planets
-    - MomCorp
-    - Planet express
+    - [Cookieville Minimum Security Orphanarium](#/customers/detail)
+    - [Democratic Order of Planets](#/customers/detail)
+    - [MomCorp](#/customers/detail)
+    - [Planet express](#/customers/detail)
 - Tax number
+
     - 
     -
     - 01-1230001
@@ -29,5 +30,5 @@
 
 ### Notes
 
-- Sorted by `Customer.name`.
+- Sorted by `#Customer.name`.
 - First 100 rows displayed.
