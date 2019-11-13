@@ -79,13 +79,30 @@
 <h2><i class="fas fa-user text-muted"></i> Sales <code>Sales</code></h2>
 <h3>Goals</h3>
 <ul>
+<li>Customers<ul>
+<li><a href="#/customers/create" title="/customers/create">Create customer</a></li>
+<li><a href="#/customers" title="/customers">List customers</a></li>
+<li><a href="#/customers/detail" title="/customers/detail">Display customer</a></li>
+<li><a href="#/customers/edit" title="/customers/edit">Update customer</a></li>
+</ul>
+</li>
+<li>Orders<ul>
 <li>Create order</li>
 <li>List orders</li>
 <li>Display order</li>
 <li>Update order</li>
 <li>Delete order</li>
 </ul>
+</li>
+</ul>
 <div id="section-computed-Sales">
+<div id="section-refers-to-Sales">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>
+</div>
 </div>
 </section>
 <section id="Shipping">
@@ -132,6 +149,13 @@
 <h2>Menu</h2>
 <ul>
 <li><a href="#/customers" title="/customers">Customers</a></li>
+</ul>
+<h2>Actors</h2>
+<ul>
+<li><a href="#Sales" title="Sales">Sales</a></li>
+<li><a href="#Shipping" title="Shipping">Shipping</a></li>
+<li><a href="#Invoicing" title="Invoicing">Invoicing</a></li>
+<li><a href="#Guest" title="Guest">Guest</a></li>
 </ul>
 </section>
 <!--fsd/customer/Customer.md-->
@@ -238,6 +262,78 @@
 </div>
 </div>
 </section>
+<!--fsd/customer/CustomerCreate.md-->
+<section id="/customers/create">
+<h2><i class="fas fa-desktop text-muted"></i> Create customer <code>/customers/create</code></h2>
+<div class="card">
+<div class="card-body">
+<h3><i class="fas fa-list text-muted"></i> </h3>
+<div class="form-group row">
+ <label for="cf-aid-/customers/create-1" class="col-sm-4 col-lg-3 col-form-label">Name<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/create-1" type="text" class="form-control" placeholder="Name" value="">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/create-2" class="col-sm-4 col-lg-3 col-form-label">Tax number</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/create-2" type="text" class="form-control" placeholder="Tax number" value="">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/create-3" class="col-sm-4 col-lg-3 col-form-label">Maturity interval<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <select id="cf-aid-/customers/create-3" class="form-control">
+   <option></option>
+   <option>30</option>
+   <option>60</option>
+   <option>90</option>
+  </select>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/create-4" class="col-sm-4 col-lg-3 col-form-label">Mobile</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/create-4" type="text" class="form-control" placeholder="Mobile" value="">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/create-5" class="col-sm-4 col-lg-3 col-form-label">Email</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/create-5" type="text" class="form-control" placeholder="Email" value="">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/create-6" class="col-sm-4 col-lg-3 col-form-label">Web</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/create-6" type="text" class="form-control" placeholder="Web" value="">
+ </div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/customers/detail" class="btn btn-primary" title="/customers/detail">Save</a></p>
+</div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/customers" class="btn btn-outline-secondary" title="/customers">Back</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="section-computed-/customers/create">
+<div id="section-refers-to-/customers/create">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
+</div>
+<div id="section-referred-from-/customers/create">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
+</div>
+</div>
+</section>
 <!--fsd/customer/CustomerDetail.md-->
 <section id="/customers/detail">
 <h2><i class="fas fa-desktop text-muted"></i> Customer detail <code>/customers/detail</code></h2>
@@ -282,6 +378,11 @@
 </div>
 <div class="form-group row">
 <div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/customers/edit" class="btn btn-outline-secondary" title="/customers/edit">Edit</a></p>
+</div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
 <p><a href="#/customers" class="btn btn-outline-secondary" title="/customers">Back</a></p>
 </div>
 </div>
@@ -290,11 +391,86 @@
 <div id="section-computed-/customers/detail">
 <div id="section-refers-to-/customers/detail">
 <strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
 </div>
 <div id="section-referred-from-/customers/detail">
 <strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
+</div>
+</div>
+</section>
+<!--fsd/customer/CustomerEdit.md-->
+<section id="/customers/edit">
+<h2><i class="fas fa-desktop text-muted"></i> Edit customer <code>/customers/edit</code></h2>
+<div class="card">
+<div class="card-body">
+<h3><i class="fas fa-list text-muted"></i> </h3>
+<div class="form-group row">
+ <label for="cf-aid-/customers/edit-1" class="col-sm-4 col-lg-3 col-form-label">Name<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/edit-1" type="text" class="form-control" placeholder="Name" value="Planet express">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/edit-2" class="col-sm-4 col-lg-3 col-form-label">Tax number</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/edit-2" type="text" class="form-control" placeholder="Tax number" value="01-9852145">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/edit-3" class="col-sm-4 col-lg-3 col-form-label">Maturity interval<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <select id="cf-aid-/customers/edit-3" class="form-control">
+   <option></option>
+   <option selected>30</option>
+   <option>60</option>
+   <option>90</option>
+  </select>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/edit-4" class="col-sm-4 col-lg-3 col-form-label">Mobile</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/edit-4" type="text" class="form-control" placeholder="Mobile" value="202-555-0182">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/edit-5" class="col-sm-4 col-lg-3 col-form-label">Email</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/edit-5" type="text" class="form-control" placeholder="Email" value="info@planet-express.com">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/customers/edit-6" class="col-sm-4 col-lg-3 col-form-label">Web</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/customers/edit-6" type="text" class="form-control" placeholder="Web" value="https://planet-express.com">
+ </div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/customers/detail" class="btn btn-primary" title="/customers/detail">Save</a></p>
+</div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/customers/detail" class="btn btn-outline-secondary" title="/customers/detail">Back</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="section-computed-/customers/edit">
+<div id="section-refers-to-/customers/edit">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>
+</div>
+<div id="section-referred-from-/customers/edit">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>
 </div>
 </div>
 </section>
@@ -305,9 +481,9 @@
 <div class="card-body">
 <h3><i class="fas fa-list text-muted"></i> Search</h3>
 <div class="form-group row">
- <label for="cf-aid-1" class="col-sm-4 col-lg-3 col-form-label">Search</label>
+ <label for="cf-aid-/customers-1" class="col-sm-4 col-lg-3 col-form-label">Search</label>
  <div class="col-sm-7 col-lg-8">
-  <input id="cf-aid-1" type="text" class="form-control" placeholder="Search" value="">
+  <input id="cf-aid-/customers-1" type="text" class="form-control" placeholder="Search" value="">
   <small class="form-text text-muted">Search name, tax number, mobile, email or web</small>
  </div>
 </div>
@@ -392,8 +568,11 @@
 </table>
 </div>
 </div>
+<h3></h3>
+<p><a href="#/customers/create" class="btn btn-outline-secondary" title="/customers/create">Create</a></p>
 <h3>Notes</h3>
 <ul>
+<li>Shows records of <a href="#Customer" title="Customer">Customer</a>.</li>
 <li>Sorted by <a href="#Customer" title="Customer.name">Customer.name</a>.</li>
 <li>First 100 rows displayed.</li>
 </ul>
@@ -401,10 +580,14 @@
 <div id="section-refers-to-/customers">
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
-<a href="#Customer" title="Customer.name">Customer.name</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer.name</a>
 </div>
 <div id="section-referred-from-/customers">
 <strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>
 </div>
 </div>
@@ -602,8 +785,14 @@ placeholder="Start typing to search..." />
 </form>
 <h2><i class="fas fa-desktop text-muted"></i> Screens</h2>
 <ul>
+<li class="__search-item" id="__search-item-/customers/create">
+<a href="#/customers/create" class="mr-3">Create customer</a> <code>/customers/create</code>
+</li>
 <li class="__search-item" id="__search-item-/customers/detail">
 <a href="#/customers/detail" class="mr-3">Customer detail</a> <code>/customers/detail</code>
+</li>
+<li class="__search-item" id="__search-item-/customers/edit">
+<a href="#/customers/edit" class="mr-3">Edit customer</a> <code>/customers/edit</code>
 </li>
 <li class="__search-item" id="__search-item-/customers">
 <a href="#/customers" class="mr-3">List customers</a> <code>/customers</code>
@@ -661,7 +850,7 @@ placeholder="Start typing to search..." />
           var itemId = item.id
           var code = itemId.substr('__search-item-'.length)
           var section = document.getElementById(code)
-          var matches = !query.trim() || section.innerHTML.toLowerCase().includes(query.toLowerCase())
+          var matches = !query.trim() || section.innerHTML.toLowerCase().indexOf(query.toLowerCase()) > -1
           item.style.display = matches ? 'list-item' : 'none'
         }
       }

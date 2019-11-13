@@ -8,4 +8,5 @@
 - Mobile: 202-555-0182
 - Email: info@planet-express.com
 - Web: https://planet-express.com
+- [:Edit](#/customers/edit)
 - [:Back](#/customers)

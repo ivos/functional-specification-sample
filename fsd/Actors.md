@@ -2,11 +2,17 @@
 
 ### Goals
 
-- Create order
-- List orders
-- Display order
-- Update order
-- Delete order
+- Customers
+    - [Create customer](#/customers/create)
+    - [List customers](#/customers)
+    - [Display customer](#/customers/detail)
+    - [Update customer](#/customers/edit)
+- Orders
+    - Create order
+    - List orders
+    - Display order
+    - Update order
+    - Delete order
 
 ## Actor: Shipping
 

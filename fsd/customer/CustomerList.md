@@ -28,7 +28,12 @@
     - dev.null@mom.com
     - info@planet-express.com
 
+### 
+
+[:Create](#/customers/create)
+
 ### Notes
 
+- Shows records of `#Customer`.
 - Sorted by `#Customer.name`.
 - First 100 rows displayed.
