@@ -10,6 +10,7 @@ This is the FSD (Functional Specification Document) for an imaginary Ordering sy
 ## Menu
 
 - [Customers](#/customers)
+- [Orders](#/orders)
 
 ## Actors
 

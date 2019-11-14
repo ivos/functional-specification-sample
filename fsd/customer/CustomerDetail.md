@@ -10,3 +10,6 @@
 - Web: https://planet-express.com
 - [:Edit](#/customers/edit)
 - [:Back](#/customers)
+- [:Orders](#/orders)
+
+> Show orders of this customer: the customer is pre-filled in the List orders screen.

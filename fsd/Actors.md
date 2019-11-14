@@ -9,8 +9,8 @@
     - [Update customer](#/customers/edit)
 - Orders
     - Create order
-    - List orders
-    - Display order
+    - [List orders](#/orders)
+    - [Display order](#/orders/detail)
     - Update order
     - Delete order
 
@@ -18,21 +18,21 @@
 
 ### Goals
 
-- List orders
-- Display order
+- [List orders](#/orders)
+- [Display order](#/orders/detail)
 - Ship order
 
 ## Actor: Invoicing
 
 ### Goals
 
-- List orders
-- Display order
+- [List orders](#/orders)
+- [Display order](#/orders/detail)
 - Invoice order
 
 ## Actor: Guest
 
 ### Goals
 
-- List orders
-- Display order
+- [List orders](#/orders)
+- [Display order](#/orders/detail)

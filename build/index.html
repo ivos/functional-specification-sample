@@ -88,8 +88,8 @@
 </li>
 <li>Orders<ul>
 <li>Create order</li>
-<li>List orders</li>
-<li>Display order</li>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
 <li>Update order</li>
 <li>Delete order</li>
 </ul>
@@ -101,7 +101,9 @@
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
 </div>
 </div>
 </section>
@@ -109,32 +111,47 @@
 <h2><i class="fas fa-user text-muted"></i> Shipping <code>Shipping</code></h2>
 <h3>Goals</h3>
 <ul>
-<li>List orders</li>
-<li>Display order</li>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
 <li>Ship order</li>
 </ul>
 <div id="section-computed-Shipping">
+<div id="section-refers-to-Shipping">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
 </div>
 </section>
 <section id="Invoicing">
 <h2><i class="fas fa-user text-muted"></i> Invoicing <code>Invoicing</code></h2>
 <h3>Goals</h3>
 <ul>
-<li>List orders</li>
-<li>Display order</li>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
 <li>Invoice order</li>
 </ul>
 <div id="section-computed-Invoicing">
+<div id="section-refers-to-Invoicing">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
 </div>
 </section>
 <section id="Guest">
 <h2><i class="fas fa-user text-muted"></i> Guest <code>Guest</code></h2>
 <h3>Goals</h3>
 <ul>
-<li>List orders</li>
-<li>Display order</li>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
 </ul>
 <div id="section-computed-Guest">
+<div id="section-refers-to-Guest">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
 </div>
 </section>
 <!--fsd/Overview.md-->
@@ -149,6 +166,7 @@
 <h2>Menu</h2>
 <ul>
 <li><a href="#/customers" title="/customers">Customers</a></li>
+<li><a href="#/orders" title="/orders">Orders</a></li>
 </ul>
 <h2>Actors</h2>
 <ul>
@@ -266,7 +284,7 @@
 <section id="/customers/create">
 <h2><i class="fas fa-desktop text-muted"></i> Create customer <code>/customers/create</code></h2>
 <div class="card">
-<div class="card-body">
+<div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> </h3>
 <div class="form-group row">
  <label for="cf-aid-/customers/create-1" class="col-sm-4 col-lg-3 col-form-label">Name<span class="cf-required">&nbsp;*</span></label>
@@ -338,7 +356,7 @@
 <section id="/customers/detail">
 <h2><i class="fas fa-desktop text-muted"></i> Customer detail <code>/customers/detail</code></h2>
 <div class="card">
-<div class="card-body">
+<div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> </h3>
 <div class="form-group row">
  <label class="col-sm-4 col-lg-3 col-form-label">Name</label>
@@ -386,20 +404,30 @@
 <p><a href="#/customers" class="btn btn-outline-secondary" title="/customers">Back</a></p>
 </div>
 </div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/orders" class="btn btn-outline-secondary" title="/orders">Orders</a></p>
+</div>
+</div>
+<blockquote>
+<p>Show orders of this customer: the customer is pre-filled in the List orders screen.</p>
+</blockquote>
 </div>
 </div>
 <div id="section-computed-/customers/detail">
 <div id="section-refers-to-/customers/detail">
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 <div id="section-referred-from-/customers/detail">
 <strong>Referred from:</strong>
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
 </div>
 </div>
 </section>
@@ -407,7 +435,7 @@
 <section id="/customers/edit">
 <h2><i class="fas fa-desktop text-muted"></i> Edit customer <code>/customers/edit</code></h2>
 <div class="card">
-<div class="card-body">
+<div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> </h3>
 <div class="form-group row">
  <label for="cf-aid-/customers/edit-1" class="col-sm-4 col-lg-3 col-form-label">Name<span class="cf-required">&nbsp;*</span></label>
@@ -478,7 +506,7 @@
 <section id="/customers">
 <h2><i class="fas fa-desktop text-muted"></i> List customers <code>/customers</code></h2>
 <div class="card">
-<div class="card-body">
+<div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> Search</h3>
 <div class="form-group row">
  <label for="cf-aid-/customers-1" class="col-sm-4 col-lg-3 col-form-label">Search</label>
@@ -634,7 +662,7 @@
 <td></td>
 </tr>
 <tr>
-<td>Customer<code class="float-right">customer</code></td>
+<td>Customer id<code class="float-right">customerId</code></td>
 <td title="Foreign key"><span class="badge badge-dark">FK</span></td>
 <td>
 <p><a href="#Customer" title="Customer">Customer</a></p>
@@ -681,25 +709,154 @@
 </td>
 <td></td>
 </tr>
-<tr>
-<td>Order items<code class="float-right">orderItems</code></td>
-<td title="Mandatory"><span class="badge badge-primary">M</span></td>
-<td>
-<p>[<a href="#OrderItem" title="OrderItem">OrderItem</a>]</p>
-</td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <div id="section-computed-Order">
 <div id="section-refers-to-Order">
 <strong>Refers to:</strong>
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>,
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>
 </div>
 <div id="section-referred-from-Order">
 <strong>Referred from:</strong>
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+</div>
+</div>
+</section>
+<!--fsd/order/OrderDetail.md-->
+<section id="/orders/detail">
+<h2><i class="fas fa-desktop text-muted"></i> Order detail <code>/orders/detail</code></h2>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-list text-muted"></i> Order</h3>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Order number</label>
+ <div class="col-sm-7 col-lg-8">
+<p>PO-2019-00035</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Customer</label>
+ <div class="col-sm-7 col-lg-8">
+<p><a href="#/customers/detail" title="/customers/detail">Planet express</a></p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Status</label>
+ <div class="col-sm-7 col-lg-8">
+<p>Created</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Due date</label>
+ <div class="col-sm-7 col-lg-8">
+<p>in 2 days (14. 11. 2019)</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Comment</label>
+ <div class="col-sm-7 col-lg-8">
+<p>The cigars better not be too dry!</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Created</label>
+ <div class="col-sm-7 col-lg-8">
+<p>2 days ago (8. 11. 2019 15:35)</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Updated</label>
+ <div class="col-sm-7 col-lg-8">
+<p>an hour ago (10. 11. 2019 9:51)</p>
+ </div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/orders" class="btn btn-outline-secondary" title="/orders">Back</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-table text-muted"></i> Order items</h3>
+<table class="table table-bordered table-hover table-sm">
+<thead>
+<tr>
+<th>
+<p>Product</p>
+</th>
+<th>
+<p>Unit price</p>
+</th>
+<th>
+<p>Quantity</p>
+</th>
+<th>
+<p>Item total</p>
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+<p>Cigar</p>
+</td>
+<td>
+<p>2.35</p>
+</td>
+<td>
+<p>8</p>
+</td>
+<td>
+<p>18.8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Pabst Blue Robot beer, 6-pack</p>
+</td>
+<td>
+<p>3.24</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>3.24</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>BendërBrau ColdFusion Stream Beer Premium</p>
+</td>
+<td>
+<p>3.49</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>13.96</p>
+</td>
+</tr>
+</table>
+<p>Invoice total: 36</p>
+</div>
+</div>
+<div id="section-computed-/orders/detail">
+<div id="section-refers-to-/orders/detail">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+</div>
+<div id="section-referred-from-/orders/detail">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Shipping" title="Shipping">Shipping</a>,
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Invoicing" title="Invoicing">Invoicing</a>,
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Guest" title="Guest">Guest</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 </div>
 </section>
@@ -726,7 +883,7 @@
 <td></td>
 </tr>
 <tr>
-<td>Order<code class="float-right">order</code></td>
+<td>Order id<code class="float-right">orderId</code></td>
 <td title="Foreign key"><span class="badge badge-dark">FK</span></td>
 <td>
 <p><a href="#Order" title="Order">Order</a></p>
@@ -764,9 +921,182 @@
 <strong>Refers to:</strong>
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
 </div>
-<div id="section-referred-from-OrderItem">
+</div>
+</section>
+<!--fsd/order/OrderList.md-->
+<section id="/orders">
+<h2><i class="fas fa-desktop text-muted"></i> List orders <code>/orders</code></h2>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-list text-muted"></i> Search</h3>
+<div class="form-group row">
+ <label for="cf-aid-/orders-1" class="col-sm-4 col-lg-3 col-form-label">Search</label>
+ <div class="col-sm-7 col-lg-8">
+  <input id="cf-aid-/orders-1" type="text" class="form-control" placeholder="Search" value="">
+  <small class="form-text text-muted">Order number or comment</small>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders-2" class="col-sm-4 col-lg-3 col-form-label">Customer</label>
+ <div class="col-sm-7 col-lg-8">
+  <select id="cf-aid-/orders-2" class="form-control">
+   <option></option>
+   <option>Cookieville Minimum Security Orphanarium</option>
+   <option>Democratic Order of Planets</option>
+   <option>MomCorp</option>
+   <option>Planet express</option>
+  </select>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders-3" class="col-sm-4 col-lg-3 col-form-label">Status</label>
+ <div class="col-sm-7 col-lg-8">
+  <select id="cf-aid-/orders-3" class="form-control">
+   <option></option>
+   <option>Created</option>
+   <option>Shipped</option>
+   <option>Invoiced</option>
+  </select>
+ </div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-table text-muted"></i> </h3>
+<table class="table table-bordered table-hover table-sm">
+<thead>
+<tr>
+<th>
+<p>Order number</p>
+</th>
+<th>
+<p>Customer</p>
+</th>
+<th>
+<p>Status</p>
+</th>
+<th>
+<p>Due date</p>
+</th>
+<th>
+<p>Total</p>
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+<p><a href="#/orders/detail" title="/orders/detail">PO-2019-00035</a></p>
+</td>
+<td>
+<p>Planet express</p>
+</td>
+<td>
+<p>Created</p>
+</td>
+<td>
+<p>14. 11. 2019</p>
+</td>
+<td>
+<p>36</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="#/orders/detail" title="/orders/detail">PO-2019-00036</a></p>
+</td>
+<td>
+<p>MomCorp</p>
+</td>
+<td>
+<p>Created</p>
+</td>
+<td>
+<p>13. 11. 2019</p>
+</td>
+<td>
+<p>256</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="#/orders/detail" title="/orders/detail">PO-2019-00034</a></p>
+</td>
+<td>
+<p>Planet express</p>
+</td>
+<td>
+<p>Shipped</p>
+</td>
+<td>
+<p>5. 11. 2019</p>
+</td>
+<td>
+<p>17.42</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="#/orders/detail" title="/orders/detail">PO-2019-00033</a></p>
+</td>
+<td>
+<p>Democratic Order of Planets</p>
+</td>
+<td>
+<p>Invoiced</p>
+</td>
+<td>
+<p>25. 10. 2019</p>
+</td>
+<td>
+<p>4,085</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="#/orders/detail" title="/orders/detail">PO-2019-00032</a></p>
+</td>
+<td>
+<p>Planet express</p>
+</td>
+<td>
+<p>Invoiced</p>
+</td>
+<td>
+<p>20. 10. 2019</p>
+</td>
+<td>
+<p>23</p>
+</td>
+</tr>
+</table>
+<p><a href="#/orders/create" class="btn btn-outline-secondary" title="/orders/create">Create</a></p>
+</div>
+</div>
+<h3>Notes</h3>
+<blockquote>
+<ul>
+<li>Shows records of <a href="#Order" title="Order">Order</a>.</li>
+<li>Sorted by <a href="#Order" title="Order.updated">Order.updated</a> descending.</li>
+<li>First 100 rows displayed.</li>
+</ul>
+</blockquote>
+<div id="section-computed-/orders">
+<div id="section-refers-to-/orders">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<a href="#/orders/create" title="/orders/create">/orders/create</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.updated</a>
+</div>
+<div id="section-referred-from-/orders">
 <strong>Referred from:</strong>
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Shipping" title="Shipping">Shipping</a>,
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Invoicing" title="Invoicing">Invoicing</a>,
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Guest" title="Guest">Guest</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
 </div>
 </div>
 </section>
@@ -797,6 +1127,12 @@ placeholder="Start typing to search..." />
 </li>
 <li class="__search-item" id="__search-item-/customers">
 <a href="#/customers" class="mr-3">List customers</a> <code>/customers</code>
+</li>
+<li class="__search-item" id="__search-item-/orders/detail">
+<a href="#/orders/detail" class="mr-3">Order detail</a> <code>/orders/detail</code>
+</li>
+<li class="__search-item" id="__search-item-/orders">
+<a href="#/orders" class="mr-3">List orders</a> <code>/orders</code>
 </li>
 
 </ul>
