@@ -8,10 +8,10 @@
     - [Display customer](#/customers/detail)
     - [Update customer](#/customers/edit)
 - Orders
-    - Create order
+    - [Create order](#/orders/create)
     - [List orders](#/orders)
     - [Display order](#/orders/detail)
-    - Update order
+    - [Edit order](#/orders/edit)
     - Delete order
 
 ## Actor: Shipping

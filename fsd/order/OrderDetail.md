@@ -9,13 +9,14 @@
 - Comment: The cigars better not be too dry!
 - Created: 2 days ago (8. 11. 2019 15:35)
 - Updated: an hour ago (10. 11. 2019 9:51)
+- [:Edit](#/orders/edit)
 - [:Back](#/orders)
 
 ### Table: Order items
 
 - Product
     - Cigar
-    - Pabst Blue Robot beer, 6-pack
+    - Pabst Blue Robot beer 6-pack
     - BendërBrau ColdFusion Stream Beer Premium
 - Unit price
     - 2.35

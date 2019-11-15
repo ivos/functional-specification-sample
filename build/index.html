@@ -87,10 +87,10 @@
 </ul>
 </li>
 <li>Orders<ul>
-<li>Create order</li>
+<li><a href="#/orders/create" title="/orders/create">Create order</a></li>
 <li><a href="#/orders" title="/orders">List orders</a></li>
 <li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
-<li>Update order</li>
+<li><a href="#/orders/edit" title="/orders/edit">Edit order</a></li>
 <li>Delete order</li>
 </ul>
 </li>
@@ -102,8 +102,10 @@
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>
 </div>
 </div>
 </section>
@@ -520,20 +522,20 @@
 <div class="card">
 <div class="card-body pb-0">
 <h3><i class="fas fa-table text-muted"></i> </h3>
-<table class="table table-bordered table-hover table-sm">
+<table class="table table-bordered table-sm">
 <thead>
 <tr>
 <th>
-<p>Name</p>
+Name
 </th>
 <th>
-<p>Tax number</p>
+Tax number
 </th>
 <th>
-<p>Mobile</p>
+Mobile
 </th>
 <th>
-<p>Email</p>
+Email
 </th>
 </tr>
 </thead>
@@ -542,7 +544,6 @@
 <p><a href="#/customers/detail" title="/customers/detail">Cookieville Minimum Security Orphanarium</a></p>
 </td>
 <td>
-<p></p>
 </td>
 <td>
 <p>202-555-0124</p>
@@ -556,10 +557,8 @@
 <p><a href="#/customers/detail" title="/customers/detail">Democratic Order of Planets</a></p>
 </td>
 <td>
-<p></p>
 </td>
 <td>
-<p></p>
 </td>
 <td>
 <p><a href="mailto:inquiries@doop.org">inquiries@doop.org</a></p>
@@ -723,6 +722,119 @@
 </div>
 </div>
 </section>
+<!--fsd/order/OrderCreate.md-->
+<section id="/orders/create">
+<h2><i class="fas fa-desktop text-muted"></i> Create order <code>/orders/create</code></h2>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-list text-muted"></i> Order</h3>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Order number</label>
+ <div class="col-sm-7 col-lg-8">
+<p>PO-2019-00037</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders/create-1" class="col-sm-4 col-lg-3 col-form-label">Customer<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <select id="cf-aid-/orders/create-1" class="form-control">
+   <option></option>
+   <option>Cookieville Minimum Security Orphanarium</option>
+   <option>Democratic Order of Planets</option>
+   <option>MomCorp</option>
+   <option>Planet express</option>
+  </select>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders/create-2" class="col-sm-4 col-lg-3 col-form-label">Due date<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <div class="input-group">
+   <input id="cf-aid-/orders/create-2" type="text" class="form-control" placeholder="Due date" value="">
+   <div class="input-group-append">
+    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders/create-3" class="col-sm-4 col-lg-3 col-form-label">Comment</label>
+ <div class="col-sm-7 col-lg-8">
+  <textarea id="cf-aid-/orders/create-3" rows="4" class="form-control" placeholder="Comment"></textarea>
+ </div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-table text-muted"></i> Order items</h3>
+<table class="table table-bordered table-sm">
+<thead>
+<tr>
+<th>
+Product<span class="cf-required">&nbsp;*</span>
+</th>
+<th>
+Unit price<span class="cf-required">&nbsp;*</span>
+</th>
+<th>
+Quantity<span class="cf-required">&nbsp;*</span>
+</th>
+<th>
+Item total
+</th>
+<th>
+Delete row
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+  <select class="form-control">
+   <option></option>
+   <option>Cigar</option>
+   <option>Pabst Blue Robot beer 6-pack</option>
+   <option>BendërBrau ColdFusion Stream Beer Premium</option>
+  </select>
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Unit price" value="">
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Quantity" value="">
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><button type="button" class="btn btn-warning"><i class="far fa-trash-alt"></i></button></p>
+</td>
+</tr>
+</table>
+<p><button type="button" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Add row</button></p>
+<p>Invoice total: 0</p>
+</div>
+</div>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-list text-muted"></i> </h3>
+<p><a href="#/orders/detail" class="btn btn-primary" title="/orders/detail"><i class="fas fa-check"></i> Save</a></p>
+<p><a href="#/orders" class="btn btn-outline-secondary" title="/orders"><i class="fas fa-chevron-left"></i> Back</a></p>
+</div>
+</div>
+<div id="section-computed-/orders/create">
+<div id="section-refers-to-/orders/create">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+</div>
+<div id="section-referred-from-/orders/create">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+</div>
+</div>
+</section>
 <!--fsd/order/OrderDetail.md-->
 <section id="/orders/detail">
 <h2><i class="fas fa-desktop text-muted"></i> Order detail <code>/orders/detail</code></h2>
@@ -773,6 +885,11 @@
 </div>
 <div class="form-group row">
 <div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><a href="#/orders/edit" class="btn btn-outline-secondary" title="/orders/edit">Edit</a></p>
+</div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
 <p><a href="#/orders" class="btn btn-outline-secondary" title="/orders">Back</a></p>
 </div>
 </div>
@@ -781,20 +898,20 @@
 <div class="card">
 <div class="card-body pb-0">
 <h3><i class="fas fa-table text-muted"></i> Order items</h3>
-<table class="table table-bordered table-hover table-sm">
+<table class="table table-bordered table-sm">
 <thead>
 <tr>
 <th>
-<p>Product</p>
+Product
 </th>
 <th>
-<p>Unit price</p>
+Unit price
 </th>
 <th>
-<p>Quantity</p>
+Quantity
 </th>
 <th>
-<p>Item total</p>
+Item total
 </th>
 </tr>
 </thead>
@@ -814,7 +931,7 @@
 </tr>
 <tr>
 <td>
-<p>Pabst Blue Robot beer, 6-pack</p>
+<p>Pabst Blue Robot beer 6-pack</p>
 </td>
 <td>
 <p>3.24</p>
@@ -848,6 +965,7 @@
 <div id="section-refers-to-/orders/detail">
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 <div id="section-referred-from-/orders/detail">
@@ -856,7 +974,165 @@
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Shipping" title="Shipping">Shipping</a>,
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Invoicing" title="Invoicing">Invoicing</a>,
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Guest" title="Guest">Guest</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+</div>
+</div>
+</section>
+<!--fsd/order/OrderEdit.md-->
+<section id="/orders/edit">
+<h2><i class="fas fa-desktop text-muted"></i> Edit order <code>/orders/edit</code></h2>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-list text-muted"></i> Order</h3>
+<div class="form-group row">
+ <label class="col-sm-4 col-lg-3 col-form-label">Order number</label>
+ <div class="col-sm-7 col-lg-8">
+<p>PO-2019-00035</p>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders/edit-1" class="col-sm-4 col-lg-3 col-form-label">Customer<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <select id="cf-aid-/orders/edit-1" class="form-control">
+   <option></option>
+   <option>Cookieville Minimum Security Orphanarium</option>
+   <option>Democratic Order of Planets</option>
+   <option>MomCorp</option>
+   <option selected>Planet express</option>
+  </select>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders/edit-2" class="col-sm-4 col-lg-3 col-form-label">Due date<span class="cf-required">&nbsp;*</span></label>
+ <div class="col-sm-7 col-lg-8">
+  <div class="input-group">
+   <input id="cf-aid-/orders/edit-2" type="text" class="form-control" placeholder="Due date" value="14. 11. 2019">
+   <div class="input-group-append">
+    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="form-group row">
+ <label for="cf-aid-/orders/edit-3" class="col-sm-4 col-lg-3 col-form-label">Comment</label>
+ <div class="col-sm-7 col-lg-8">
+  <textarea id="cf-aid-/orders/edit-3" rows="4" class="form-control" placeholder="Comment">The cigars better not be too dry!</textarea>
+ </div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-table text-muted"></i> Order items</h3>
+<table class="table table-bordered table-sm">
+<thead>
+<tr>
+<th>
+Product<span class="cf-required">&nbsp;*</span>
+</th>
+<th>
+Unit price<span class="cf-required">&nbsp;*</span>
+</th>
+<th>
+Quantity<span class="cf-required">&nbsp;*</span>
+</th>
+<th>
+Item total
+</th>
+<th>
+Delete row
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+  <select class="form-control">
+   <option></option>
+   <option selected>Cigar</option>
+   <option>Pabst Blue Robot beer 6-pack</option>
+   <option>BendërBrau ColdFusion Stream Beer Premium</option>
+  </select>
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Unit price" value="2.35">
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Quantity" value="8">
+</td>
+<td>
+<p>18.8</p>
+</td>
+<td>
+<p><button type="button" class="btn btn-warning"><i class="far fa-trash-alt"></i></button></p>
+</td>
+</tr>
+<tr>
+<td>
+  <select class="form-control">
+   <option></option>
+   <option>Cigar</option>
+   <option selected>Pabst Blue Robot beer 6-pack</option>
+   <option>BendërBrau ColdFusion Stream Beer Premium</option>
+  </select>
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Unit price" value="3.24">
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Quantity" value="1">
+</td>
+<td>
+<p>3.24</p>
+</td>
+<td>
+<p><button type="button" class="btn btn-warning"><i class="far fa-trash-alt"></i></button></p>
+</td>
+</tr>
+<tr>
+<td>
+  <select class="form-control">
+   <option></option>
+   <option>Cigar</option>
+   <option>Pabst Blue Robot beer 6-pack</option>
+   <option selected>BendërBrau ColdFusion Stream Beer Premium</option>
+  </select>
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Unit price" value="3.49">
+</td>
+<td>
+  <input type="text" class="form-control" placeholder="Quantity" value="4">
+</td>
+<td>
+<p>13.96</p>
+</td>
+<td>
+<p><button type="button" class="btn btn-warning"><i class="far fa-trash-alt"></i></button></p>
+</td>
+</tr>
+</table>
+<p><button type="button" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Add row</button></p>
+<p>Invoice total: 36</p>
+</div>
+</div>
+<div class="card">
+<div class="card-body pb-0">
+<h3><i class="fas fa-list text-muted"></i> </h3>
+<p><a href="#/orders/detail" class="btn btn-primary" title="/orders/detail"><i class="fas fa-check"></i> Save</a></p>
+<p><a href="#/orders/detail" class="btn btn-outline-secondary" title="/orders/detail"><i class="fas fa-chevron-left"></i> Back</a></p>
+</div>
+</div>
+<div id="section-computed-/orders/edit">
+<div id="section-refers-to-/orders/edit">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
+<div id="section-referred-from-/orders/edit">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
 </div>
 </div>
 </section>
@@ -964,23 +1240,23 @@
 <div class="card">
 <div class="card-body pb-0">
 <h3><i class="fas fa-table text-muted"></i> </h3>
-<table class="table table-bordered table-hover table-sm">
+<table class="table table-bordered table-sm">
 <thead>
 <tr>
 <th>
-<p>Order number</p>
+Order number
 </th>
 <th>
-<p>Customer</p>
+Customer
 </th>
 <th>
-<p>Status</p>
+Status
 </th>
 <th>
-<p>Due date</p>
+Due date
 </th>
 <th>
-<p>Total</p>
+Total
 </th>
 </tr>
 </thead>
@@ -1085,7 +1361,7 @@
 <div id="section-refers-to-/orders">
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
-<a href="#/orders/create" title="/orders/create">/orders/create</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.updated</a>
 </div>
@@ -1096,6 +1372,7 @@
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Invoicing" title="Invoicing">Invoicing</a>,
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Guest" title="Guest">Guest</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
 </div>
 </div>
@@ -1128,8 +1405,14 @@ placeholder="Start typing to search..." />
 <li class="__search-item" id="__search-item-/customers">
 <a href="#/customers" class="mr-3">List customers</a> <code>/customers</code>
 </li>
+<li class="__search-item" id="__search-item-/orders/create">
+<a href="#/orders/create" class="mr-3">Create order</a> <code>/orders/create</code>
+</li>
 <li class="__search-item" id="__search-item-/orders/detail">
 <a href="#/orders/detail" class="mr-3">Order detail</a> <code>/orders/detail</code>
+</li>
+<li class="__search-item" id="__search-item-/orders/edit">
+<a href="#/orders/edit" class="mr-3">Edit order</a> <code>/orders/edit</code>
 </li>
 <li class="__search-item" id="__search-item-/orders">
 <a href="#/orders" class="mr-3">List orders</a> <code>/orders</code>
