@@ -50,3 +50,11 @@ You can also
 
 3. Edit the FSD source files in [fsd/](fsd/).
 As you save a file, the changes are automatically reflected in the output FSD in the browser.
+
+## Building FSD
+
+To build output FSD run:
+
+	npm run build
+
+The FSD is then available at `build/index.html`.
