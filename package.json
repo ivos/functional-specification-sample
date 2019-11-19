@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/ivos/functional-specification-sample#readme",
   "devDependencies": {
-    "casefu-cli": "file:../casefu/casefu-cli/"
+    "casefu-cli": "0.5.0"
   }
 }
