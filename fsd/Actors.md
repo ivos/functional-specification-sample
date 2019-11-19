@@ -12,7 +12,7 @@
     - [List orders](#/orders)
     - [Display order](#/orders/detail)
     - [Edit order](#/orders/edit)
-    - Delete order
+    - [Delete order](#/orders/detail)
 
 ## Actor: Shipping
 
@@ -20,7 +20,7 @@
 
 - [List orders](#/orders)
 - [Display order](#/orders/detail)
-- Ship order
+- [Ship order](#/orders/detail)
 
 ## Actor: Invoicing
 
@@ -28,7 +28,7 @@
 
 - [List orders](#/orders)
 - [Display order](#/orders/detail)
-- Invoice order
+- [Invoice order](#/orders/detail)
 
 ## Actor: Guest
 

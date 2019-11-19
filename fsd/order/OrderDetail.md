@@ -10,7 +10,23 @@
 - Created: 2 days ago (8. 11. 2019 15:35)
 - Updated: an hour ago (10. 11. 2019 9:51)
 - [:Edit](#/orders/edit)
+- [:Ship]()
+
+> Enabled in `#Order.status` `created`. Sets `#Order.status` to `shipped`.
+
+- [:Invoice]()
+
+> Enabled in `#Order.status` `shipped`. Sets `#Order.status` to `invoiced`.
+
 - [:Back](#/orders)
+- [:Delete]()
+
+> Enabled in `#Order.status` `created`. Toggles the delete panel below. The panel is hidden by default.
+
+- FieldSet: Delete order confirmation
+    - [danger: Confirm]() deleting this order
+
+    > Enabled in `#Order.status` `created`.
 
 ### Table: Order items
 

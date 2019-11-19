@@ -13,7 +13,6 @@
 
     <style>
         main > section {
-            display: none;
             margin-top: 20px;
         }
 
@@ -55,6 +54,11 @@
             font-weight: bold;
         }
     </style>
+    <style id="__print-style">
+        main > section {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -69,94 +73,18 @@
             </a>
         </li>
     </ul>
+    <div class="btn-group-toggle">
+        <label class="btn btn-outline-secondary btn-sm">
+            <input id="__print-button" type="checkbox" checked autocomplete="off">
+            <i class="fas fa-print"></i>
+        </label>
+    </div>
 </nav>
 
 <div class="container-fluid">
     <main role="main">
 
-        <!--fsd/Actors.md-->
-<section id="Sales">
-<h2><i class="fas fa-user text-muted"></i> Sales <code>Sales</code></h2>
-<h3>Goals</h3>
-<ul>
-<li>Customers<ul>
-<li><a href="#/customers/create" title="/customers/create">Create customer</a></li>
-<li><a href="#/customers" title="/customers">List customers</a></li>
-<li><a href="#/customers/detail" title="/customers/detail">Display customer</a></li>
-<li><a href="#/customers/edit" title="/customers/edit">Update customer</a></li>
-</ul>
-</li>
-<li>Orders<ul>
-<li><a href="#/orders/create" title="/orders/create">Create order</a></li>
-<li><a href="#/orders" title="/orders">List orders</a></li>
-<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
-<li><a href="#/orders/edit" title="/orders/edit">Edit order</a></li>
-<li>Delete order</li>
-</ul>
-</li>
-</ul>
-<div id="section-computed-Sales">
-<div id="section-refers-to-Sales">
-<strong>Refers to:</strong>
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>
-</div>
-</div>
-</section>
-<section id="Shipping">
-<h2><i class="fas fa-user text-muted"></i> Shipping <code>Shipping</code></h2>
-<h3>Goals</h3>
-<ul>
-<li><a href="#/orders" title="/orders">List orders</a></li>
-<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
-<li>Ship order</li>
-</ul>
-<div id="section-computed-Shipping">
-<div id="section-refers-to-Shipping">
-<strong>Refers to:</strong>
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
-</div>
-</div>
-</section>
-<section id="Invoicing">
-<h2><i class="fas fa-user text-muted"></i> Invoicing <code>Invoicing</code></h2>
-<h3>Goals</h3>
-<ul>
-<li><a href="#/orders" title="/orders">List orders</a></li>
-<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
-<li>Invoice order</li>
-</ul>
-<div id="section-computed-Invoicing">
-<div id="section-refers-to-Invoicing">
-<strong>Refers to:</strong>
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
-</div>
-</div>
-</section>
-<section id="Guest">
-<h2><i class="fas fa-user text-muted"></i> Guest <code>Guest</code></h2>
-<h3>Goals</h3>
-<ul>
-<li><a href="#/orders" title="/orders">List orders</a></li>
-<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
-</ul>
-<div id="section-computed-Guest">
-<div id="section-refers-to-Guest">
-<strong>Refers to:</strong>
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
-</div>
-</div>
-</section>
-<!--fsd/Overview.md-->
+        <!--fsd/1-Overview.md-->
 <section id="__home">
 <h1>Ordering FSD</h1>
 <p>This is the FSD (Functional Specification Document) for an imaginary Ordering system.</p>
@@ -181,6 +109,88 @@ You can also try the Search page by clicking on the search icon above.</p>
 <li><a href="#Invoicing" title="Invoicing">Invoicing</a></li>
 <li><a href="#Guest" title="Guest">Guest</a></li>
 </ul>
+</section>
+<!--fsd/Actors.md-->
+<section id="Sales">
+<h2><i class="fas fa-user text-muted"></i> Sales <code>Sales</code></h2>
+<h3>Goals</h3>
+<ul>
+<li>Customers<ul>
+<li><a href="#/customers/create" title="/customers/create">Create customer</a></li>
+<li><a href="#/customers" title="/customers">List customers</a></li>
+<li><a href="#/customers/detail" title="/customers/detail">Display customer</a></li>
+<li><a href="#/customers/edit" title="/customers/edit">Update customer</a></li>
+</ul>
+</li>
+<li>Orders<ul>
+<li><a href="#/orders/create" title="/orders/create">Create order</a></li>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
+<li><a href="#/orders/edit" title="/orders/edit">Edit order</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Delete order</a></li>
+</ul>
+</li>
+</ul>
+<div id="section-computed-Sales">
+<div id="section-refers-to-Sales">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>
+</div>
+</div>
+</section>
+<section id="Shipping">
+<h2><i class="fas fa-user text-muted"></i> Shipping <code>Shipping</code></h2>
+<h3>Goals</h3>
+<ul>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Ship order</a></li>
+</ul>
+<div id="section-computed-Shipping">
+<div id="section-refers-to-Shipping">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
+</div>
+</section>
+<section id="Invoicing">
+<h2><i class="fas fa-user text-muted"></i> Invoicing <code>Invoicing</code></h2>
+<h3>Goals</h3>
+<ul>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Invoice order</a></li>
+</ul>
+<div id="section-computed-Invoicing">
+<div id="section-refers-to-Invoicing">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
+</div>
+</section>
+<section id="Guest">
+<h2><i class="fas fa-user text-muted"></i> Guest <code>Guest</code></h2>
+<h3>Goals</h3>
+<ul>
+<li><a href="#/orders" title="/orders">List orders</a></li>
+<li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
+</ul>
+<div id="section-computed-Guest">
+<div id="section-refers-to-Guest">
+<strong>Refers to:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
+</div>
 </section>
 <!--fsd/customer/Customer.md-->
 <section id="Customer">
@@ -721,6 +731,7 @@ Email
 </div>
 <div id="section-referred-from-Order">
 <strong>Referred from:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
@@ -894,7 +905,46 @@ Delete row
 </div>
 <div class="form-group row">
 <div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><button type="button" class="btn btn-outline-secondary">Ship</button></p>
+</div>
+</div>
+<blockquote>
+<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>. Sets <a href="#Order" title="Order.status">Order.status</a> to <code>shipped</code>.</p>
+</blockquote>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><button type="button" class="btn btn-outline-secondary">Invoice</button></p>
+</div>
+</div>
+<blockquote>
+<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>shipped</code>. Sets <a href="#Order" title="Order.status">Order.status</a> to <code>invoiced</code>.</p>
+</blockquote>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
 <p><a href="#/orders" class="btn btn-outline-secondary" title="/orders">Back</a></p>
+</div>
+</div>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><button type="button" class="btn btn-outline-secondary">Delete</button></p>
+</div>
+</div>
+<blockquote>
+<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>. Toggles the delete panel below. The panel is hidden by default.</p>
+</blockquote>
+<div class="card">
+<div class="card-body pb-0">
+ <h5 class="card-title">
+<p>Delete order confirmation</p>
+</h5>
+<div class="form-group row">
+<div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
+<p><button type="button" class="btn btn-danger">Confirm</button> deleting this order</p>
+</div>
+</div>
+<blockquote>
+<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>.</p>
+</blockquote>
 </div>
 </div>
 </div>
@@ -970,6 +1020,7 @@ Item total
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.status</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 <div id="section-referred-from-/orders/detail">
@@ -1390,7 +1441,7 @@ Total
 <i class="fas fa-search text-muted"></i>
 </span>
 </div>
-<input id="searchText" type="text" class="form-control"
+<input id="__search-text" type="text" class="form-control"
 placeholder="Start typing to search..." />
 </div>
 </div>
@@ -1464,7 +1515,7 @@ placeholder="Start typing to search..." />
 
 <script>
   window.addEventListener("load", function () {
-    var searchText = document.getElementById('searchText')
+    var searchText = document.getElementById('__search-text')
     if (searchText) {
       searchText.oninput = function (event) {
         var query = event.target.value
@@ -1479,6 +1530,22 @@ placeholder="Start typing to search..." />
         }
       }
       searchText.focus()
+    }
+
+    var printButton = document.getElementById('__print-button')
+    var printLabel = printButton.parentNode
+    var printStyle = document.getElementById('__print-style')
+    var printMode = false
+    printButton.onclick = function (event) {
+      event.preventDefault()
+      if (printMode) {
+        printStyle.innerHTML = 'main > section { display: none; }'
+        printLabel.classList.remove('active')
+      } else {
+        printStyle.innerHTML = ''
+        printLabel.classList.add('active')
+      }
+      printMode = !printMode
     }
 
     window.onhashchange = function () {
