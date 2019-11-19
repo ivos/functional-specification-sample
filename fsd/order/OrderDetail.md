@@ -24,9 +24,10 @@
 > Enabled in `#Order.status` `created`. Toggles the delete panel below. The panel is hidden by default.
 
 - FieldSet: Delete order confirmation
-    - [danger: Confirm]() deleting this order
+    - [danger: Confirm]() deleting this order.
 
-    > Enabled in `#Order.status` `created`.
+    > Enabled in `#Order.status` `created`.\
+    > UC: `#OR-190`
 
 ### Table: Order items
 

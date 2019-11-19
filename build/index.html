@@ -123,11 +123,11 @@ You can also try the Search page by clicking on the search icon above.</p>
 </ul>
 </li>
 <li>Orders<ul>
-<li><a href="#/orders/create" title="/orders/create">Create order</a></li>
+<li><a href="#OR-100" title="OR-100">Create order</a></li>
 <li><a href="#/orders" title="/orders">List orders</a></li>
 <li><a href="#/orders/detail" title="/orders/detail">Display order</a></li>
 <li><a href="#/orders/edit" title="/orders/edit">Edit order</a></li>
-<li><a href="#/orders/detail" title="/orders/detail">Delete order</a></li>
+<li><a href="#OR-190" title="OR-190">Delete order</a></li>
 </ul>
 </li>
 </ul>
@@ -138,10 +138,16 @@ You can also try the Search page by clicking on the search icon above.</p>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>
+</div>
+<div id="section-referred-from-Sales">
+<strong>Referred from:</strong>
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>
 </div>
 </div>
 </section>
@@ -634,6 +640,101 @@ Email
 </div>
 </div>
 </section>
+<!--fsd/order/OR-100-Create-order.md-->
+<section id="OR-100">
+<h2><i class="fas fa-list-alt text-muted"></i> <code>OR-100</code> Create order</h2>
+<ul>
+<li>Actors: <a href="#Sales" title="Sales">Sales</a></li>
+<li>Level: User goal</li>
+<li>Mockup: <a href="#/orders/create" title="/orders/create">Create order</a></li>
+</ul>
+<h3>Main success scenario:</h3>
+<ol>
+<li>User enters order data.</li>
+<li>User enters order item data.</li>
+<li>System calculates the <code>Item total</code> for each item and <code>Invoice total</code> for the whole order.</li>
+<li>User saves the order.</li>
+<li>System validates the data.</li>
+<li>System creates new <a href="#Order" title="Order">Order</a>.</li>
+</ol>
+<h3>Extensions:</h3>
+<ul>
+<li>2a. User wants to order more than 1 item:<ul>
+<li>2a1. User adds more item rows and fills them in.</li>
+</ul>
+</li>
+<li>2b. User wants to remove an item from the order:<ul>
+<li>2b1. User deletes the item row.</li>
+</ul>
+</li>
+<li>5a. A required field is empty:<ul>
+<li>5a1. System displays error: Required.</li>
+</ul>
+</li>
+<li>5b. <a href="#Order" title="Order.dueDate">Due date</a> is in past:<ul>
+<li>5b1. System displays error: Must be in future.</li>
+</ul>
+</li>
+<li>5c. Item <a href="#OrderItem" title="OrderItem.unitPrice">unit price</a> or <a href="#OrderItem" title="OrderItem.quantity">quantity</a> is &lt;= 0:<ul>
+<li>5c1. System displays error: Must be &gt; 0.</li>
+</ul>
+</li>
+</ul>
+<div id="section-computed-OR-100">
+<div id="section-refers-to-OR-100">
+<strong>Refers to:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.dueDate</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">OrderItem.unitPrice</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">OrderItem.quantity</a>
+</div>
+<div id="section-referred-from-OR-100">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>
+</div>
+</div>
+</section>
+<!--fsd/order/OR-190-Delete-order.md-->
+<section id="OR-190">
+<h2><i class="fas fa-list-alt text-muted"></i> <code>OR-190</code> Delete order</h2>
+<ul>
+<li>Actors: <a href="#Sales" title="Sales">Sales</a></li>
+<li>Level: User goal</li>
+<li>Mockup: <a href="#/orders/detail" title="/orders/detail">Order detail</a></li>
+</ul>
+<h3>Main success scenario:</h3>
+<ol>
+<li>User finds order in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>.</li>
+<li>User deletes the order.</li>
+<li>System validates the data.</li>
+<li>System deletes all <a href="#OrderItem" title="OrderItem">OrderItem</a>s of the order and the <a href="#Order" title="Order">Order</a> itself.</li>
+</ol>
+<h3>Extensions:</h3>
+<ul>
+<li>3a. <a href="#Order" title="Order.status">Order.status</a> is not <code>created</code>:<ul>
+<li>3a1. System displays error: Invalid status.</li>
+</ul>
+</li>
+</ul>
+<div id="section-computed-OR-190">
+<div id="section-refers-to-OR-190">
+<strong>Refers to:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.status</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
+<div id="section-referred-from-OR-190">
+<strong>Referred from:</strong>
+<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+</div>
+</div>
+</section>
 <!--fsd/order/Order.md-->
 <section id="Order">
 <h2><i class="fas fa-database text-muted"></i> Order <code>Order</code></h2>
@@ -731,6 +832,8 @@ Email
 </div>
 <div id="section-referred-from-Order">
 <strong>Referred from:</strong>
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
@@ -740,6 +843,9 @@ Email
 <!--fsd/order/OrderCreate.md-->
 <section id="/orders/create">
 <h2><i class="fas fa-desktop text-muted"></i> Create order <code>/orders/create</code></h2>
+<blockquote>
+<p>UC: <a href="#OR-100" title="OR-100">OR-100</a></p>
+</blockquote>
 <div class="card">
 <div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> Order</h3>
@@ -840,12 +946,13 @@ Delete row
 <div id="section-computed-/orders/create">
 <div id="section-refers-to-/orders/create">
 <strong>Refers to:</strong>
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 <div id="section-referred-from-/orders/create">
 <strong>Referred from:</strong>
-<i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 </div>
@@ -939,11 +1046,11 @@ Delete row
 </h5>
 <div class="form-group row">
 <div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
-<p><button type="button" class="btn btn-danger">Confirm</button> deleting this order</p>
+<p><button type="button" class="btn btn-danger">Confirm</button> deleting this order.</p>
 </div>
 </div>
 <blockquote>
-<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>.</p>
+<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>.<br>UC: <a href="#OR-190" title="OR-190">OR-190</a></p>
 </blockquote>
 </div>
 </div>
@@ -1021,7 +1128,8 @@ Item total
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.status</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>
 </div>
 <div id="section-referred-from-/orders/detail">
 <strong>Referred from:</strong>
@@ -1029,6 +1137,7 @@ Item total
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Shipping" title="Shipping">Shipping</a>,
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Invoicing" title="Invoicing">Invoicing</a>,
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Guest" title="Guest">Guest</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
@@ -1251,6 +1360,11 @@ Delete row
 <div id="section-refers-to-OrderItem">
 <strong>Refers to:</strong>
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
+<div id="section-referred-from-OrderItem">
+<strong>Referred from:</strong>
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>
 </div>
 </div>
 </section>
@@ -1505,6 +1619,12 @@ placeholder="Start typing to search..." />
 </ul>
 <h2><i class="fas fa-list-alt text-muted"></i> Use cases</h2>
 <ul>
+<li class="__search-item" id="__search-item-OR-100">
+<a href="#OR-100" class="mr-3">Create order</a> <code>OR-100</code>
+</li>
+<li class="__search-item" id="__search-item-OR-190">
+<a href="#OR-190" class="mr-3">Delete order</a> <code>OR-190</code>
+</li>
 
 </ul>
 </section>
