@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+          crossorigin="anonymous">
 
     <style>
         main > section {
@@ -62,19 +62,25 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#__home">
-        <i class="fas fa-home text-muted"></i>
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="https://casefu.com/" target="_blank" style="margin-top: -6px;"
+       title="Open CaseFu.com web site">
+        <img src="https://casefu.com/favicon.ico" height="25" />
     </a>
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item pr-1">
+            <a class="nav-link" href="#__home">
+                <i class="fas fa-home"></i>
+            </a>
+        </li>
+        <li class="nav-item px-1">
             <a class="nav-link" href="#__search">
-                <i class="fas fa-search text-muted"></i>
+                <i class="fas fa-search"></i>
             </a>
         </li>
     </ul>
     <div class="btn-group-toggle">
-        <label class="btn btn-outline-secondary btn-sm">
+        <label class="btn btn-outline-secondary" title="Toggle print mode">
             <input id="__print-button" type="checkbox" checked autocomplete="off">
             <i class="fas fa-print"></i>
         </label>
@@ -776,8 +782,8 @@ Email
 <td></td>
 </tr>
 <tr>
-<td>Customer id<code class="float-right">customerId</code></td>
-<td title="Foreign key"><span class="badge badge-dark">FK</span></td>
+<td>Customer<code class="float-right">customer</code></td>
+<td>n : 1</td>
 <td>
 <p><a href="#Customer" title="Customer">Customer</a></p>
 </td>
@@ -823,19 +829,27 @@ Email
 </td>
 <td></td>
 </tr>
+<tr>
+<td>Order items<code class="float-right">orderItems</code></td>
+<td>1 : n</td>
+<td>
+<p><a href="#OrderItem" title="OrderItem">OrderItem</a></p>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <div id="section-computed-Order">
 <div id="section-refers-to-Order">
 <strong>Refers to:</strong>
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
 </div>
 <div id="section-referred-from-Order">
 <strong>Referred from:</strong>
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 </div>
@@ -1323,14 +1337,6 @@ Delete row
 <td></td>
 </tr>
 <tr>
-<td>Order id<code class="float-right">orderId</code></td>
-<td title="Foreign key"><span class="badge badge-dark">FK</span></td>
-<td>
-<p><a href="#Order" title="Order">Order</a></p>
-</td>
-<td></td>
-</tr>
-<tr>
 <td>Product<code class="float-right">product</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
@@ -1357,14 +1363,11 @@ Delete row
 </tbody>
 </table>
 <div id="section-computed-OrderItem">
-<div id="section-refers-to-OrderItem">
-<strong>Refers to:</strong>
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
-</div>
 <div id="section-referred-from-OrderItem">
 <strong>Referred from:</strong>
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
-<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
 </div>
 </div>
 </section>
