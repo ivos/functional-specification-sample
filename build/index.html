@@ -53,10 +53,24 @@
             color: red;
             font-weight: bold;
         }
+
+        main > section.cf-use-case > .cf-extensions > ul {
+            padding-left: 1.9rem;
+        }
+
+        main > section.cf-use-case > .cf-extensions li {
+            list-style: none;
+            text-indent: -1.9rem;
+        }
+
+        main > section.cf-use-case > .cf-extensions > ul > li:not(:last-of-type) {
+            margin-bottom: 0.5rem;
+        }
     </style>
     <style id="__print-style">
         main > section {
             display: none;
+            padding-bottom: 2rem;
         }
     </style>
 </head>
@@ -117,7 +131,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </ul>
 </section>
 <!--fsd/Actors.md-->
-<section id="Sales">
+<section id="Sales" class="cf-actor">
 <h2><i class="fas fa-user text-muted"></i> Sales <code>Sales</code></h2>
 <h3>Goals</h3>
 <ul>
@@ -157,7 +171,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </div>
 </section>
-<section id="Shipping">
+<section id="Shipping" class="cf-actor">
 <h2><i class="fas fa-user text-muted"></i> Shipping <code>Shipping</code></h2>
 <h3>Goals</h3>
 <ul>
@@ -173,7 +187,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </div>
 </section>
-<section id="Invoicing">
+<section id="Invoicing" class="cf-actor">
 <h2><i class="fas fa-user text-muted"></i> Invoicing <code>Invoicing</code></h2>
 <h3>Goals</h3>
 <ul>
@@ -189,7 +203,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </div>
 </section>
-<section id="Guest">
+<section id="Guest" class="cf-actor">
 <h2><i class="fas fa-user text-muted"></i> Guest <code>Guest</code></h2>
 <h3>Goals</h3>
 <ul>
@@ -205,7 +219,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </section>
 <!--fsd/customer/Customer.md-->
-<section id="Customer">
+<section id="Customer" class="cf-entity">
 <h2><i class="fas fa-database text-muted"></i> Customer <code>Customer</code></h2>
 <h3>Attributes:</h3>
 <table class="table table-bordered table-hover">
@@ -309,7 +323,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </section>
 <!--fsd/customer/CustomerCreate.md-->
-<section id="/customers/create">
+<section id="/customers/create" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> Create customer <code>/customers/create</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -381,7 +395,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </section>
 <!--fsd/customer/CustomerDetail.md-->
-<section id="/customers/detail">
+<section id="/customers/detail" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> Customer detail <code>/customers/detail</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -460,7 +474,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </section>
 <!--fsd/customer/CustomerEdit.md-->
-<section id="/customers/edit">
+<section id="/customers/edit" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> Edit customer <code>/customers/edit</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -531,7 +545,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 </div>
 </section>
 <!--fsd/customer/CustomerList.md-->
-<section id="/customers">
+<section id="/customers" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> List customers <code>/customers</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -647,7 +661,7 @@ Email
 </div>
 </section>
 <!--fsd/order/OR-100-Create-order.md-->
-<section id="OR-100">
+<section id="OR-100" class="cf-use-case">
 <h2><i class="fas fa-list-alt text-muted"></i> <code>OR-100</code> Create order</h2>
 <ul>
 <li>Actors: <a href="#Sales" title="Sales">Sales</a></li>
@@ -663,6 +677,7 @@ Email
 <li>System validates the data.</li>
 <li>System creates new <a href="#Order" title="Order">Order</a>.</li>
 </ol>
+<div class="cf-extensions">
 <h3>Extensions:</h3>
 <ul>
 <li>2a. User wants to order more than 1 item:<ul>
@@ -686,6 +701,7 @@ Email
 </ul>
 </li>
 </ul>
+</div>
 <div id="section-computed-OR-100">
 <div id="section-refers-to-OR-100">
 <strong>Refers to:</strong>
@@ -704,7 +720,7 @@ Email
 </div>
 </section>
 <!--fsd/order/OR-190-Delete-order.md-->
-<section id="OR-190">
+<section id="OR-190" class="cf-use-case">
 <h2><i class="fas fa-list-alt text-muted"></i> <code>OR-190</code> Delete order</h2>
 <ul>
 <li>Actors: <a href="#Sales" title="Sales">Sales</a></li>
@@ -718,6 +734,7 @@ Email
 <li>System validates the data.</li>
 <li>System deletes all <a href="#OrderItem" title="OrderItem">OrderItem</a>s of the order and the <a href="#Order" title="Order">Order</a> itself.</li>
 </ol>
+<div class="cf-extensions">
 <h3>Extensions:</h3>
 <ul>
 <li>3a. <a href="#Order" title="Order.status">Order.status</a> is not <code>created</code>:<ul>
@@ -725,6 +742,7 @@ Email
 </ul>
 </li>
 </ul>
+</div>
 <div id="section-computed-OR-190">
 <div id="section-refers-to-OR-190">
 <strong>Refers to:</strong>
@@ -742,7 +760,7 @@ Email
 </div>
 </section>
 <!--fsd/order/Order.md-->
-<section id="Order">
+<section id="Order" class="cf-entity">
 <h2><i class="fas fa-database text-muted"></i> Order <code>Order</code></h2>
 <h3>Attributes:</h3>
 <table class="table table-bordered table-hover">
@@ -855,7 +873,7 @@ Email
 </div>
 </section>
 <!--fsd/order/OrderCreate.md-->
-<section id="/orders/create">
+<section id="/orders/create" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> Create order <code>/orders/create</code></h2>
 <blockquote>
 <p>UC: <a href="#OR-100" title="OR-100">OR-100</a></p>
@@ -972,7 +990,7 @@ Delete row
 </div>
 </section>
 <!--fsd/order/OrderDetail.md-->
-<section id="/orders/detail">
+<section id="/orders/detail" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> Order detail <code>/orders/detail</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -1159,7 +1177,7 @@ Item total
 </div>
 </section>
 <!--fsd/order/OrderEdit.md-->
-<section id="/orders/edit">
+<section id="/orders/edit" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> Edit order <code>/orders/edit</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -1315,7 +1333,7 @@ Delete row
 </div>
 </section>
 <!--fsd/order/OrderItem.md-->
-<section id="OrderItem">
+<section id="OrderItem" class="cf-entity">
 <h2><i class="fas fa-database text-muted"></i> Order item <code>OrderItem</code></h2>
 <h3>Attributes:</h3>
 <table class="table table-bordered table-hover">
@@ -1372,7 +1390,7 @@ Delete row
 </div>
 </section>
 <!--fsd/order/OrderList.md-->
-<section id="/orders">
+<section id="/orders" class="cf-screen">
 <h2><i class="fas fa-desktop text-muted"></i> List orders <code>/orders</code></h2>
 <div class="card">
 <div class="card-body pb-0">
@@ -1662,7 +1680,7 @@ placeholder="Start typing to search..." />
     printButton.onclick = function (event) {
       event.preventDefault()
       if (printMode) {
-        printStyle.innerHTML = 'main > section { display: none; }'
+        printStyle.innerHTML = 'main > section { display: none; padding-bottom: 2rem; }'
         printLabel.classList.remove('active')
       } else {
         printStyle.innerHTML = ''
