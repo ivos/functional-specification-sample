@@ -3,7 +3,7 @@
 ### Attributes:
 
 - Id (APK bigint)
-- Version (M int) - Optimistic locking version
+- Version (M bigint) - Optimistic locking version
 - Order number (M string 30)
 - Customer (n:1 `#Customer`)
 - Due date (M date)

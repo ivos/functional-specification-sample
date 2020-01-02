@@ -245,7 +245,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>Version<code class="float-right">version</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
-<p>int</p>
+<p>bigint</p>
 </td>
 <td>
 <p>Optimistic locking version</p>
@@ -265,7 +265,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>
 <p>string 14</p>
 </td>
-<td></td>
+<td>
+<p>Min size 4</p>
+</td>
 </tr>
 <tr>
 <td>Maturity interval<code class="float-right">maturityInterval</code></td>
@@ -274,7 +276,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 <p>int</p>
 </td>
 <td>
-<p>Invoice maturity interval [days]</p>
+<p>Invoice maturity interval [days], non-negative</p>
 </td>
 </tr>
 <tr>
@@ -786,7 +788,7 @@ Email
 <td>Version<code class="float-right">version</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
-<p>int</p>
+<p>bigint</p>
 </td>
 <td>
 <p>Optimistic locking version</p>
