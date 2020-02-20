@@ -21,7 +21,7 @@
 - [:Back](#/orders)
 - [:Delete]()
 
-> Enabled in `#Order.status` `created`. Toggles the delete panel below. The panel is hidden by default.
+> Enabled in `#Order.status` `created`. Toggles the delete confirmation panel below. The panel is hidden by default.
 
 - FieldSet: Delete order confirmation
     - [danger: Confirm]() deleting this order.
@@ -49,3 +49,7 @@
     - 13.96
 
 Invoice total: 36
+
+### Notes
+
+> - Displays `#Order` record and related `#OrderItem` records.

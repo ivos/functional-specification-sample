@@ -32,6 +32,6 @@
 
 ### Notes
 
-> - Shows records of `#Customer`.
+> - Displays `#Customer` records.
 > - Sorted by `#Customer.name`.
 > - First 100 rows displayed.

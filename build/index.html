@@ -320,6 +320,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <div id="section-computed-Customer">
 <div id="section-referred-from-Customer">
 <strong>Referred from:</strong>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/create" title="Create customer">Create customer</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
 </div>
@@ -377,6 +380,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <p><a href="#/customers/detail" class="btn btn-primary" title="/customers/detail">Save</a></p>
 </div>
 </div>
+<blockquote>
+<p>Creates <a href="#Customer" title="Customer">Customer</a> record.</p>
+</blockquote>
 <div class="form-group row">
 <div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
 <p><a href="#/customers" class="btn btn-outline-secondary" title="/customers">Back</a></p>
@@ -388,6 +394,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 <div id="section-refers-to-/customers/create">
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>
 </div>
 <div id="section-referred-from-/customers/create">
@@ -459,12 +466,19 @@ You can also try the Search page by clicking on the search icon above.</p>
 </blockquote>
 </div>
 </div>
+<h3>Notes</h3>
+<blockquote>
+<ul>
+<li>Displays <a href="#Customer" title="Customer">Customer</a> record.</li>
+</ul>
+</blockquote>
 <div id="section-computed-/customers/detail">
 <div id="section-refers-to-/customers/detail">
 <strong>Refers to:</strong>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>
 </div>
 <div id="section-referred-from-/customers/detail">
 <strong>Referred from:</strong>
@@ -528,6 +542,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <p><a href="#/customers/detail" class="btn btn-primary" title="/customers/detail">Save</a></p>
 </div>
 </div>
+<blockquote>
+<p>Updates <a href="#Customer" title="Customer">Customer</a> record.</p>
+</blockquote>
 <div class="form-group row">
 <div class="offset-sm-4 offset-lg-3 col-sm-7 col-lg-8">
 <p><a href="#/customers/detail" class="btn btn-outline-secondary" title="/customers/detail">Back</a></p>
@@ -538,7 +555,8 @@ You can also try the Search page by clicking on the search icon above.</p>
 <div id="section-computed-/customers/edit">
 <div id="section-refers-to-/customers/edit">
 <strong>Refers to:</strong>
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/detail" title="Customer detail">Customer detail</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Customer" title="Customer">Customer</a>
 </div>
 <div id="section-referred-from-/customers/edit">
 <strong>Referred from:</strong>
@@ -642,7 +660,7 @@ Email
 <h3>Notes</h3>
 <blockquote>
 <ul>
-<li>Shows records of <a href="#Customer" title="Customer">Customer</a>.</li>
+<li>Displays <a href="#Customer" title="Customer">Customer</a> records.</li>
 <li>Sorted by <a href="#Customer" title="Customer.name">Customer.name</a>.</li>
 <li>First 100 rows displayed.</li>
 </ul>
@@ -870,7 +888,9 @@ Email
 <strong>Referred from:</strong>
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 </div>
@@ -975,6 +995,9 @@ Delete row
 <div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> </h3>
 <p><a href="#/orders/detail" class="btn btn-primary" title="/orders/detail"><i class="fas fa-check"></i> Save</a></p>
+<blockquote>
+<p>Creates <a href="#Order" title="Order">Order</a> record and its <a href="#OrderItem" title="OrderItem">OrderItem</a> records.</p>
+</blockquote>
 <p><a href="#/orders" class="btn btn-outline-secondary" title="/orders"><i class="fas fa-chevron-left"></i> Back</a></p>
 </div>
 </div>
@@ -983,6 +1006,8 @@ Delete row
 <strong>Refers to:</strong>
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
 </div>
 <div id="section-referred-from-/orders/create">
@@ -1072,7 +1097,7 @@ Delete row
 </div>
 </div>
 <blockquote>
-<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>. Toggles the delete panel below. The panel is hidden by default.</p>
+<p>Enabled in <a href="#Order" title="Order.status">Order.status</a> <code>created</code>. Toggles the delete confirmation panel below. The panel is hidden by default.</p>
 </blockquote>
 <div class="card">
 <div class="card-body pb-0">
@@ -1157,6 +1182,12 @@ Item total
 <p>Invoice total: 36</p>
 </div>
 </div>
+<h3>Notes</h3>
+<blockquote>
+<ul>
+<li>Displays <a href="#Order" title="Order">Order</a> record and related <a href="#OrderItem" title="OrderItem">OrderItem</a> records.</li>
+</ul>
+</blockquote>
 <div id="section-computed-/orders/detail">
 <div id="section-refers-to-/orders/detail">
 <strong>Refers to:</strong>
@@ -1164,7 +1195,9 @@ Item total
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.status</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>,
-<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>
+<i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
 </div>
 <div id="section-referred-from-/orders/detail">
 <strong>Referred from:</strong>
@@ -1320,13 +1353,18 @@ Delete row
 <div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> </h3>
 <p><a href="#/orders/detail" class="btn btn-primary" title="/orders/detail"><i class="fas fa-check"></i> Save</a></p>
+<blockquote>
+<p>Updates <a href="#Order" title="Order">Order</a> record. Re-creates all its related <a href="#OrderItem" title="OrderItem">OrderItem</a> records.</p>
+</blockquote>
 <p><a href="#/orders/detail" class="btn btn-outline-secondary" title="/orders/detail"><i class="fas fa-chevron-left"></i> Back</a></p>
 </div>
 </div>
 <div id="section-computed-/orders/edit">
 <div id="section-refers-to-/orders/edit">
 <strong>Refers to:</strong>
-<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>
 </div>
 <div id="section-referred-from-/orders/edit">
 <strong>Referred from:</strong>
@@ -1388,7 +1426,10 @@ Delete row
 <strong>Referred from:</strong>
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-100" title="OR-100 - Create order">Create order</a>,
 <i class="fas fa-list-alt text-muted"></i>&nbsp;<a href="#OR-190" title="OR-190 - Delete order">Delete order</a>,
-<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
+<i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>
 </div>
 </div>
 </section>
@@ -1545,7 +1586,7 @@ Total
 <h3>Notes</h3>
 <blockquote>
 <ul>
-<li>Shows records of <a href="#Order" title="Order">Order</a>.</li>
+<li>Shows <a href="#Order" title="Order">Order</a> records.</li>
 <li>Sorted by <a href="#Order" title="Order.updated">Order.updated</a> descending.</li>
 <li>First 100 rows displayed.</li>
 </ul>

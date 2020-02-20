@@ -9,4 +9,7 @@
 - Email: info@planet-express.com
 - Web: https://planet-express.com
 - [primary: Save](#/customers/detail)
+
+> Updates `#Customer` record.
+
 - [:Back](#/customers/detail)

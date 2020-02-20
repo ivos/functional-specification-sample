@@ -43,6 +43,6 @@
 
 ### Notes
 
-> - Shows records of `#Order`.
+> - Shows `#Order` records.
 > - Sorted by `#Order.updated` descending.
 > - First 100 rows displayed.

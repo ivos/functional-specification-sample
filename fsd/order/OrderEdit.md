@@ -38,4 +38,6 @@ Invoice total: 36
 
 [primary: <i class="fas fa-check"></i> Save](#/orders/detail)
 
+> Updates `#Order` record. Re-creates all its related `#OrderItem` records.
+
 [:<i class="fas fa-chevron-left"></i> Back](#/orders/detail)

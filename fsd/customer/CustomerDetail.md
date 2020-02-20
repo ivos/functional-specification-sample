@@ -13,3 +13,7 @@
 - [:Orders](#/orders)
 
 > Show orders of this customer: the customer is pre-filled in the List orders screen.
+
+### Notes
+
+> - Displays `#Customer` record.

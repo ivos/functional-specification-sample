@@ -9,4 +9,7 @@
 - Email
 - Web
 - [primary: Save](#/customers/detail)
+
+> Creates `#Customer` record.
+
 - [:Back](#/customers)

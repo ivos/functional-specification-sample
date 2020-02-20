@@ -27,4 +27,6 @@ Invoice total: 0
 
 [primary: <i class="fas fa-check"></i> Save](#/orders/detail)
 
+> Creates `#Order` record and its `#OrderItem` records.
+
 [:<i class="fas fa-chevron-left"></i> Back](#/orders)
