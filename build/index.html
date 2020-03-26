@@ -54,6 +54,12 @@
             font-weight: bold;
         }
 
+        code {
+            background-color: #f4f4f4;
+            padding: 0.1rem 0.4rem;
+            border-radius: 5px;
+        }
+
         main > section.cf-use-case > .cf-extensions > ul {
             padding-left: 1.9rem;
         }
@@ -229,6 +235,7 @@ You can also try the Search page by clicking on the search icon above.</p>
 <th>Name</th>
 <th>Status</th>
 <th>Type</th>
+<th>Example</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -239,6 +246,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>
 <p>bigint</p>
 </td>
+<td>
+<p>1001</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -246,6 +256,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>bigint</p>
+</td>
+<td>
+<p>1</p>
 </td>
 <td>
 <p>Optimistic locking version</p>
@@ -257,6 +270,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>
 <p>string 100</p>
 </td>
+<td>
+<p>Planet express</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -265,6 +281,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>
 <p>string 4 - 14</p>
 </td>
+<td>
+<p>01-9852145</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -272,6 +291,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>int &gt;= 0</p>
+</td>
+<td>
+<p>30</p>
 </td>
 <td>
 <p>Invoice maturity interval in days</p>
@@ -283,6 +305,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>
 <p>string 30</p>
 </td>
+<td>
+<p>202-555-0182</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -290,6 +315,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td title="Conditional"><span class="badge badge-info">C</span></td>
 <td>
 <p>string 50</p>
+</td>
+<td>
+<p><code>info@planet-express.com</code></p>
 </td>
 <td></td>
 </tr>
@@ -299,6 +327,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td>
 <p>string 50</p>
 </td>
+<td>
+<p><code>https://planet-express.com</code></p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -306,6 +337,9 @@ You can also try the Search page by clicking on the search icon above.</p>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>timestamp</p>
+</td>
+<td>
+<p>2020-02-20T12:34:56.123</p>
 </td>
 <td></td>
 </tr>
@@ -323,6 +357,10 @@ You can also try the Search page by clicking on the search icon above.</p>
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers/edit" title="Edit customer">Edit customer</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/customers" title="List customers">List customers</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>
+</div>
+<div id="section-erd-Customer">
+<div><strong>ERD:</strong></div>
+<img src="http://www.plantuml.com/plantuml/svg/NP11Ry8m38Nl-HK-Jwe46hjCK35ncgQjNFO3KcA1jJYf78U1OF-T55KjslLzzdlsMoUrefczEP13s97iF9hqGw6pOXay1THpXn153z4O34fwXarE6Xa5BWRW2SZ1AxIqfw2mNBvjF-hwhXzH4iNm23y752nZqPCAXJtCPxEHgJrzPMwB-OWNKC5yKIQQxs6ThMOfbxm7HJbQNsPx_te5an77bln3o7EFDdU4RCbFv6KYlzZ-qviXCdVEAlQVAZ6MthWRelwC6GkvNgigNg0HXsBM65pVxGq0"/>
 </div>
 </div>
 </section>
@@ -788,6 +826,7 @@ Email
 <th>Name</th>
 <th>Status</th>
 <th>Type</th>
+<th>Example</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -798,6 +837,9 @@ Email
 <td>
 <p>bigint</p>
 </td>
+<td>
+<p>1001</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -805,6 +847,9 @@ Email
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>bigint</p>
+</td>
+<td>
+<p>1</p>
 </td>
 <td>
 <p>Optimistic locking version</p>
@@ -816,6 +861,9 @@ Email
 <td>
 <p>string 30</p>
 </td>
+<td>
+<p>PO-2019-00035</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -825,12 +873,16 @@ Email
 <p><a href="#Customer" title="Customer">Customer</a></p>
 </td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Due date<code class="float-right">dueDate</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>date</p>
+</td>
+<td>
+<p>2020-02-22</p>
 </td>
 <td></td>
 </tr>
@@ -839,6 +891,9 @@ Email
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>enum: created, shipped, invoiced</p>
+</td>
+<td>
+<p><code>shipped</code></p>
 </td>
 <td></td>
 </tr>
@@ -849,12 +904,16 @@ Email
 <p>string</p>
 </td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Created<code class="float-right">created</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>timestamp</p>
+</td>
+<td>
+<p>2020-02-20T12:02:20.202</p>
 </td>
 <td></td>
 </tr>
@@ -864,6 +923,9 @@ Email
 <td>
 <p>timestamp</p>
 </td>
+<td>
+<p>2020-02-22T20:20:02.020</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -872,6 +934,7 @@ Email
 <td>
 <p><a href="#OrderItem" title="OrderItem">OrderItem</a></p>
 </td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -890,6 +953,10 @@ Email
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders" title="List orders">List orders</a>
+</div>
+<div id="section-erd-Order">
+<div><strong>ERD:</strong></div>
+<img src="http://www.plantuml.com/plantuml/svg/TL5DQyCm3BtxL-WyMbZPBPZIiLt6MBE_aDgY4Oi_iEL2QVVV9wTfayjEbjwJdlJaNUOkSN63wiaY64fcG9L_oCSkTGu6yiZdY10Izq4fz4nyXZPPJ71H04z05Xeuq94yWzQltv_RxOYVC6KAVab-JLIexVlY3YBIGEP4_WWlpuyAKp87Dv9lzr3hAhMP56p1zuvH45kVMLhySCc2eo-k0PDGUBk2t5ECDI1_2cJGpiE2Ss9hNaJhTXARkeLYSYZIBYv6bMZ_PKU77uokhjBU4w4tadif-LNgOUrwNQ_3vLQcRgTTGhLJxT3R-ar_"/>
 </div>
 </div>
 </section>
@@ -1381,6 +1448,7 @@ Delete row
 <th>Name</th>
 <th>Status</th>
 <th>Type</th>
+<th>Example</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1391,6 +1459,9 @@ Delete row
 <td>
 <p>bigint</p>
 </td>
+<td>
+<p>1001</p>
+</td>
 <td></td>
 </tr>
 <tr>
@@ -1400,12 +1471,16 @@ Delete row
 <p>string 100</p>
 </td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Unit price<code class="float-right">unitPrice</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>decimal</p>
+</td>
+<td>
+<p>20.22</p>
 </td>
 <td></td>
 </tr>
@@ -1414,6 +1489,9 @@ Delete row
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
 <p>decimal</p>
+</td>
+<td>
+<p>16</p>
 </td>
 <td></td>
 </tr>
@@ -1428,6 +1506,10 @@ Delete row
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/detail" title="Order detail">Order detail</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/edit" title="Edit order">Edit order</a>
+</div>
+<div id="section-erd-OrderItem">
+<div><strong>ERD:</strong></div>
+<img src="http://www.plantuml.com/plantuml/svg/NOzB2i9044JtVOfU2u6ubH3YKaJC5SQPnZJE9tPw5Y7nxiOeA6xh5TIhPb0ZceE7ZXsXPR6UOBXnx8sOW9uZwTWJ9j4k0L1KrX7FuaWEIW4dGDmWEzpXXQyS5QjgtnxhUirxIIvRNU2Wml6Asx9S2gSFpf6r5RQq51nP3iR_q7isxxL_-01O1N2UYo9DNnjeABhNcIS0"/>
 </div>
 </div>
 </section>
