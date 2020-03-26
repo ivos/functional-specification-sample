@@ -15,10 +15,10 @@ The output Functional Specification Document is being built at
 [build/index.html](build/index.html).
 
 You can
-[**view the Functional Specification Document online here**](https://htmlpreview.github.io/?https://github.com/ivos/functional-specification-sample/blob/master/build/index.html).
+[**view the Functional Specification Document online here**](https://htmlpreview.github.io/?https://github.com/ivos/functional-specification-sample/blob/develop/build/index.html).
 
 You can also
-[download it here](https://raw.githubusercontent.com/ivos/functional-specification-sample/master/build/index.html).
+[download it here](https://raw.githubusercontent.com/ivos/functional-specification-sample/develop/build/index.html).
 
 
 ## Installation
