@@ -4,7 +4,6 @@
 
 ### Form: Order
 
-- Order number (RO): PO-2019-00037
 - Customer (R select: Cookieville Minimum Security Orphanarium, Democratic Order of Planets, MomCorp, Planet express)
 - Due date (R date)
 - Comment (multiLine)

@@ -12,6 +12,14 @@
 4. User saves the order.
 5. System validates the data.
 6. System creates new `#Order`.
+7. System sets `#Order.status` = `accepted`.
+8. System sets `#Order.created` = current timestamp.
+9. System sets `#Order.updated` = current timestamp.
+10. System sets `#Order.orderNumber`  = `PO-YYYY-SSSSS`, where:
+    - `PO` is a constant indicationg a purchase order
+    - `YYYY` is the current year
+    - `SSSSS` is a unique sequence number within the current year
+11. System creates new `#OrderItem` for each order item created by the user.
 
 ### Extensions:
 
@@ -23,5 +31,7 @@
     - 5a1. System displays error: Required.
 - 5b. [Due date](#Order.dueDate) is in past:
     - 5b1. System displays error: Must be in future.
-- 5c. Item [unit price](#OrderItem.unitPrice) or [quantity](#OrderItem.quantity) is <= 0:
-    - 5c1. System displays error: Must be > 0.
+- 5c. Item [unit price](#OrderItem.unitPrice) is < 0:
+    - 5c1. System displays error: Must be >= 0.
+- 5d. Item [quantity](#OrderItem.quantity) is <= 0:
+    - 5d1. System displays error: Must be > 0.

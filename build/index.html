@@ -733,6 +733,16 @@ Email
 <li>User saves the order.</li>
 <li>System validates the data.</li>
 <li>System creates new <a href="#Order" title="Order">Order</a>.</li>
+<li>System sets <a href="#Order" title="Order.status">Order.status</a> = <code>accepted</code>.</li>
+<li>System sets <a href="#Order" title="Order.created">Order.created</a> = current timestamp.</li>
+<li>System sets <a href="#Order" title="Order.updated">Order.updated</a> = current timestamp.</li>
+<li>System sets <a href="#Order" title="Order.orderNumber">Order.orderNumber</a>  = <code>PO-YYYY-SSSSS</code>, where:<ul>
+<li><code>PO</code> is a constant indicationg a purchase order</li>
+<li><code>YYYY</code> is the current year</li>
+<li><code>SSSSS</code> is a unique sequence number within the current year</li>
+</ul>
+</li>
+<li>System creates new <a href="#OrderItem" title="OrderItem">OrderItem</a> for each order item created by the user.</li>
 </ol>
 <div class="cf-extensions">
 <h3>Extensions:</h3>
@@ -753,8 +763,12 @@ Email
 <li>5b1. System displays error: Must be in future.</li>
 </ul>
 </li>
-<li>5c. Item <a href="#OrderItem" title="OrderItem.unitPrice">unit price</a> or <a href="#OrderItem" title="OrderItem.quantity">quantity</a> is &lt;= 0:<ul>
-<li>5c1. System displays error: Must be &gt; 0.</li>
+<li>5c. Item <a href="#OrderItem" title="OrderItem.unitPrice">unit price</a> is &lt; 0:<ul>
+<li>5c1. System displays error: Must be &gt;= 0.</li>
+</ul>
+</li>
+<li>5d. Item <a href="#OrderItem" title="OrderItem.quantity">quantity</a> is &lt;= 0:<ul>
+<li>5d1. System displays error: Must be &gt; 0.</li>
 </ul>
 </li>
 </ul>
@@ -765,6 +779,11 @@ Email
 <i class="fas fa-user text-muted"></i>&nbsp;<a href="#Sales" title="Sales">Sales</a>,
 <i class="fas fa-desktop text-muted"></i>&nbsp;<a href="#/orders/create" title="Create order">Create order</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.status</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.created</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.updated</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.orderNumber</a>,
+<i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">Order item</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#Order" title="Order">Order.dueDate</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">OrderItem.unitPrice</a>,
 <i class="fas fa-database text-muted"></i>&nbsp;<a href="#OrderItem" title="Order item">OrderItem.quantity</a>
@@ -969,12 +988,6 @@ Email
 <div class="card">
 <div class="card-body pb-0">
 <h3><i class="fas fa-list text-muted"></i> Order</h3>
-<div class="form-group row">
- <label class="col-sm-4 col-lg-3 col-form-label">Order number</label>
- <div class="col-sm-7 col-lg-8">
-<p>PO-2019-00037</p>
- </div>
-</div>
 <div class="form-group row">
  <label for="cf-aid-/orders/create-1" class="col-sm-4 col-lg-3 col-form-label">Customer<span class="cf-required">&nbsp;*</span></label>
  <div class="col-sm-7 col-lg-8">
@@ -1477,7 +1490,7 @@ Delete row
 <td>Unit price<code class="float-right">unitPrice</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
-<p>decimal</p>
+<p>decimal(10 + 5) &gt;= 0</p>
 </td>
 <td>
 <p>20.22</p>
@@ -1488,7 +1501,7 @@ Delete row
 <td>Quantity<code class="float-right">quantity</code></td>
 <td title="Mandatory"><span class="badge badge-primary">M</span></td>
 <td>
-<p>decimal</p>
+<p>decimal(10 + 5) &gt; 0</p>
 </td>
 <td>
 <p>16</p>
@@ -1509,7 +1522,7 @@ Delete row
 </div>
 <div id="section-erd-OrderItem">
 <div><strong>ERD:</strong></div>
-<img src="http://www.plantuml.com/plantuml/svg/NOzB2i9044JtVOfU2u6ubH3YKaJC5SQPnZJE9tPw5Y7nxiOeA6xh5TIhPb0ZceE7ZXsXPR6UOBXnx8sOW9uZwTWJ9j4k0L1KrX7FuaWEIW4dGDmWEzpXXQyS5QjgtnxhUirxIIvRNU2Wml6Asx9S2gSFpf6r5RQq51nP3iR_q7isxxL_-01O1N2UYo9DNnjeABhNcIS0"/>
+<img src="http://www.plantuml.com/plantuml/svg/RS-z3e9040JW_fvYIdz20eMDGOAbCKPVuRpRm4OuS5aAexwxY4OjR7U-P6RpJgreNrUcP4zmBAuYqvquj5PiZOe3wQKbDA9bOmm5PRrWBvvaerJZQe0Ps6E98nSS56cwFcopRBotqlZUwH1sAXmA974yWDqxxWFhGTZH03mvhcqrIMBCiPWYM-6NddlxgluZF_1kpBWCjriKDTVlJ9DJyCyl7m00"/>
 </div>
 </div>
 </section>

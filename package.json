@@ -4,8 +4,8 @@
   "description": "Sample functional specification demonstrating CaseFu analytical tool",
   "scripts": {
     "build": "casefu build",
-    "watch": "casefu watch",
-    "serve": "casefu serve"
+    "watch": "casefu watch --port 18080",
+    "serve": "casefu serve --port 18080"
   },
   "repository": {
     "type": "git",
